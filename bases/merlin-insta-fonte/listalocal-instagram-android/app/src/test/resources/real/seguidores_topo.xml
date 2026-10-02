@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Arvore REAL anonimizada (app/src/test/tools/anonimizar_arvores.py). Nomes/@ = marcadores. -->
+<hierarchy fonte="uiautomator" origem="t10a.xml" tela="lista de Seguidores, aba seguidores marcada, topo" largura="1080" altura="2408">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+  <node class="android.widget.LinearLayout" bounds="[0,0][1080,2408]">
+   <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+    <node resource-id="com.instagram.android:id/action_bar_root" class="android.widget.LinearLayout" bounds="[0,0][1080,2408]">
+     <node resource-id="android:id/content" class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+      <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+       <node resource-id="com.instagram.android:id/swipe_navigation_container" class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+        <node resource-id="com.instagram.android:id/layout_container_center_right_coordinator_layout" class="android.view.ViewGroup" bounds="[0,0][1080,2273]">
+         <node resource-id="com.instagram.android:id/layout_container_right" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]" />
+         <node resource-id="com.instagram.android:id/activity_and_camera_shared_views_main_container" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]" />
+         <node resource-id="com.instagram.android:id/layout_container_main_panel" class="android.view.ViewGroup" bounds="[0,65][1080,2273]">
+          <node resource-id="com.instagram.android:id/layout_container_main_wrapper" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]">
+           <node resource-id="com.instagram.android:id/layout_container_main" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]" />
+           <node resource-id="com.instagram.android:id/swipeable_tab_view_pager" class="androidx.viewpager.widget.ViewPager" scrollable="true" bounds="[0,65][1080,2273]">
+            <node resource-id="com.instagram.android:id/swipeable_nav_view_pager_inner_recycler_view" class="androidx.recyclerview.widget.RecyclerView" scrollable="true" bounds="[0,65][1080,2273]">
+             <node class="android.widget.FrameLayout" bounds="[0,65][1080,2273]">
+              <node resource-id="com.instagram.android:id/layout_container_swipeable" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]">
+               <node resource-id="com.instagram.android:id/main_container" class="android.widget.LinearLayout" bounds="[0,222][1080,2273]">
+                <node resource-id="com.instagram.android:id/unified_follow_list_tab_layout" class="android.widget.HorizontalScrollView" scrollable="true" bounds="[0,222][1080,357]">
+                 <node class="android.widget.LinearLayout" bounds="[0,222][1080,357]">
+                  <node class="android.widget.LinearLayout" selected="true" bounds="[0,222][351,357]">
+                   <node text="388 seguidores" resource-id="com.instagram.android:id/title" class="android.widget.Button" clickable="true" selected="true" bounds="[34,222][317,357]" />
+                  </node>
+                  <node class="android.widget.LinearLayout" clickable="true" bounds="[351,222][661,357]">
+                   <node text="413 seguindo" resource-id="com.instagram.android:id/title" class="android.widget.Button" clickable="true" bounds="[385,222][627,357]" />
+                  </node>
+                  <node class="android.widget.LinearLayout" clickable="true" bounds="[661,222][976,357]">
+                   <node text="0 assinaturas" resource-id="com.instagram.android:id/title" class="android.widget.Button" clickable="true" bounds="[695,222][942,357]" />
+                  </node>
+                  <node class="android.widget.LinearLayout" clickable="true" bounds="[976,222][1080,357]">
+                   <node text="Sinalizadas" resource-id="com.instagram.android:id/title" class="android.widget.Button" clickable="true" bounds="[1010,222][1080,357]" />
+                  </node>
+                 </node>
+                </node>
+                <node resource-id="com.instagram.android:id/unified_follow_list_view_pager_wrapper" class="android.widget.FrameLayout" bounds="[0,357][1080,2273]">
+                 <node resource-id="com.instagram.android:id/unified_follow_list_view_pager" class="androidx.viewpager.widget.ViewPager" scrollable="true" bounds="[0,357][1080,2273]">
+                  <node class="androidx.recyclerview.widget.RecyclerView" scrollable="true" bounds="[0,357][1080,2273]">
+                   <node class="android.widget.FrameLayout" bounds="[0,357][1080,2273]">
+                    <node resource-id="com.instagram.android:id/layout_listview_parent_container" class="android.widget.FrameLayout" bounds="[0,357][1080,2273]">
+                     <node resource-id="android:id/list" class="android.widget.ListView" scrollable="true" bounds="[0,357][1080,2273]">
+                      <node class="android.widget.LinearLayout" bounds="[0,357][1080,525]">
+                       <node class="android.widget.FrameLayout" bounds="[0,357][1080,525]">
+                        <node text="Pesquisar" resource-id="com.instagram.android:id/row_search_edit_text" class="android.widget.EditText" content-desc="#ffa2a9b4" clickable="true" long-clickable="true" bounds="[45,391][1035,491]" />
+                       </node>
+                      </node>
+                      <node class="android.view.ViewGroup" clickable="true" bounds="[0,525][1080,664]">
+                       <node text="Classificado por Padrão" resource-id="com.instagram.android:id/sorting_entry_row_option" class="android.widget.TextView" content-desc="Cabeçalho de Classificado por Padrão" bounds="[45,564][534,625]" />
+                       <node resource-id="com.instagram.android:id/sorting_entry_row_icon" class="android.widget.Button" content-desc="Classificar por" clickable="true" bounds="[967,561][1035,629]" />
+                      </node>
+                      <node class="android.widget.LinearLayout" clickable="true" bounds="[0,664][1080,867]">
+                       <node resource-id="com.instagram.android:id/follow_list_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,664][1080,867]">
+                        <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.FrameLayout" content-desc="Foto do perfil" clickable="true" long-clickable="true" bounds="[45,670][236,861]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.view.View" content-desc="@2131976614" bounds="[45,670][236,861]" />
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.ImageView" content-desc="Foto do perfil" bounds="[61,686][219,844]" />
+                        </node>
+                        <node resource-id="com.instagram.android:id/follow_list_content_container" class="android.widget.LinearLayout" bounds="[236,710][653,820]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_info_container" class="android.widget.LinearLayout" bounds="[270,710][524,760]">
+                          <node text="pessoa46" resource-id="com.instagram.android:id/follow_list_username" class="android.widget.TextView" bounds="[270,710][524,760]" />
+                         </node>
+                         <node text="Pessoa 47" resource-id="com.instagram.android:id/follow_list_subtitle" class="android.widget.TextView" bounds="[270,760][408,809]" />
+                        </node>
+                        <node text="Mensagem" resource-id="com.instagram.android:id/follow_list_row_large_follow_button" class="android.widget.TextView" content-desc="Enviar mensagem para Pessoa 47" clickable="true" long-clickable="true" bounds="[653,720][968,810]" />
+                        <node class="android.widget.ImageView" content-desc="Ignorar" clickable="true" bounds="[968,709][1080,821]" />
+                       </node>
+                      </node>
+                      <node class="android.widget.LinearLayout" clickable="true" bounds="[0,867][1080,1070]">
+                       <node resource-id="com.instagram.android:id/follow_list_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,867][1080,1070]">
+                        <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.FrameLayout" content-desc="Foto do perfil" clickable="true" long-clickable="true" bounds="[45,873][236,1064]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.ImageView" content-desc="Foto do perfil" bounds="[61,889][219,1047]" />
+                        </node>
+                        <node resource-id="com.instagram.android:id/follow_list_content_container" class="android.widget.LinearLayout" bounds="[236,913][653,1023]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_info_container" class="android.widget.LinearLayout" bounds="[270,913][516,963]">
+                          <node text="pessoa48" resource-id="com.instagram.android:id/follow_list_username" class="android.widget.TextView" bounds="[270,913][516,963]" />
+                         </node>
+                         <node text="pessoa49" resource-id="com.instagram.android:id/follow_list_subtitle" class="android.widget.TextView" bounds="[270,963][349,1012]" />
+                        </node>
+                        <node text="Mensagem" resource-id="com.instagram.android:id/follow_list_row_large_follow_button" class="android.widget.TextView" content-desc="Enviar mensagem para pessoa49" clickable="true" long-clickable="true" bounds="[653,923][968,1013]" />
+                        <node class="android.widget.ImageView" content-desc="Ignorar" clickable="true" bounds="[968,912][1080,1024]" />
+                       </node>
+                      </node>
+                      <node class="android.widget.LinearLayout" clickable="true" bounds="[0,1070][1080,1273]">
+                       <node resource-id="com.instagram.android:id/follow_list_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,1070][1080,1273]">
+                        <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.FrameLayout" content-desc="Foto do perfil" clickable="true" long-clickable="true" bounds="[45,1076][236,1267]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.view.View" content-desc="@2131976614" bounds="[45,1076][236,1267]" />
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.ImageView" content-desc="Foto do perfil" bounds="[61,1092][219,1250]" />
+                        </node>
+                        <node resource-id="com.instagram.android:id/follow_list_content_container" class="android.widget.LinearLayout" bounds="[236,1116][653,1226]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_info_container" class="android.widget.LinearLayout" bounds="[270,1116][548,1166]">
+                          <node text="pessoa50" resource-id="com.instagram.android:id/follow_list_username" class="android.widget.TextView" bounds="[270,1116][548,1166]" />
+                         </node>
+                         <node text="Pessoa 51" resource-id="com.instagram.android:id/follow_list_subtitle" class="android.widget.TextView" bounds="[270,1166][553,1215]" />
+                        </node>
+                        <node text="Mensagem" resource-id="com.instagram.android:id/follow_list_row_large_follow_button" class="android.widget.TextView" content-desc="Enviar mensagem para Pessoa 51" clickable="true" long-clickable="true" bounds="[653,1126][968,1216]" />
+                        <node class="android.widget.ImageView" content-desc="Ignorar" clickable="true" bounds="[968,1115][1080,1227]" />
+                       </node>
+                      </node>
+                      <node class="android.widget.LinearLayout" clickable="true" bounds="[0,1273][1080,1476]">
+                       <node resource-id="com.instagram.android:id/follow_list_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,1273][1080,1476]">
+                        <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.FrameLayout" content-desc="Foto do perfil" clickable="true" long-clickable="true" bounds="[45,1279][236,1470]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.view.View" content-desc="@2131976614" bounds="[45,1279][236,1470]" />
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.ImageView" content-desc="Foto do perfil" bounds="[61,1295][219,1453]" />
+                        </node>
+                        <node resource-id="com.instagram.android:id/follow_list_content_container" class="android.widget.LinearLayout" bounds="[236,1319][653,1429]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_info_container" class="android.widget.LinearLayout" bounds="[270,1319][520,1369]">
+                          <node text="pessoa52" resource-id="com.instagram.android:id/follow_list_username" class="android.widget.TextView" bounds="[270,1319][520,1369]" />
+                         </node>
+                         <node text="Pessoa 53" resource-id="com.instagram.android:id/follow_list_subtitle" class="android.widget.TextView" bounds="[270,1369][619,1418]" />
+                        </node>
+                        <node text="Mensagem" resource-id="com.instagram.android:id/follow_list_row_large_follow_button" class="android.widget.TextView" content-desc="Enviar mensagem para Pessoa 53" clickable="true" long-clickable="true" bounds="[653,1329][968,1419]" />
+                        <node class="android.widget.ImageView" content-desc="Ignorar" clickable="true" bounds="[968,1318][1080,1430]" />
+                       </node>
+                      </node>
+                      <node class="android.widget.LinearLayout" clickable="true" bounds="[0,1476][1080,1679]">
+                       <node resource-id="com.instagram.android:id/follow_list_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,1476][1080,1679]">
+                        <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.FrameLayout" content-desc="Foto do perfil" clickable="true" long-clickable="true" bounds="[45,1482][236,1673]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.view.View" content-desc="@2131976614" bounds="[45,1482][236,1673]" />
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.ImageView" content-desc="Foto do perfil" bounds="[61,1498][219,1656]" />
+                        </node>
+                        <node resource-id="com.instagram.android:id/follow_list_content_container" class="android.widget.LinearLayout" bounds="[236,1522][653,1632]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_info_container" class="android.widget.LinearLayout" bounds="[270,1522][478,1572]">
+                          <node text="pessoa54" resource-id="com.instagram.android:id/follow_list_username" class="android.widget.TextView" bounds="[270,1522][478,1572]" />
+                         </node>
+                         <node text="Pessoa 55" resource-id="com.instagram.android:id/follow_list_subtitle" class="android.widget.TextView" bounds="[270,1572][568,1621]" />
+                        </node>
+                        <node text="Mensagem" resource-id="com.instagram.android:id/follow_list_row_large_follow_button" class="android.widget.TextView" content-desc="Enviar mensagem para Pessoa 55" clickable="true" long-clickable="true" bounds="[653,1532][968,1622]" />
+                        <node class="android.widget.ImageView" content-desc="Ignorar" clickable="true" bounds="[968,1521][1080,1633]" />
+                       </node>
+                      </node>
+                      <node class="android.widget.LinearLayout" clickable="true" bounds="[0,1679][1080,1882]">
+                       <node resource-id="com.instagram.android:id/follow_list_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,1679][1080,1882]">
+                        <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.FrameLayout" content-desc="Foto do perfil" clickable="true" long-clickable="true" bounds="[45,1685][236,1876]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.view.View" content-desc="@2131976614" bounds="[45,1685][236,1876]" />
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.ImageView" content-desc="Foto do perfil" bounds="[61,1701][219,1859]" />
+                        </node>
+                        <node resource-id="com.instagram.android:id/follow_list_content_container" class="android.widget.LinearLayout" bounds="[236,1725][653,1835]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_info_container" class="android.widget.LinearLayout" bounds="[270,1725][418,1775]">
+                          <node text="pessoa56" resource-id="com.instagram.android:id/follow_list_username" class="android.widget.TextView" bounds="[270,1725][418,1775]" />
+                         </node>
+                         <node text="pessoa57" resource-id="com.instagram.android:id/follow_list_subtitle" class="android.widget.TextView" bounds="[270,1775][394,1824]" />
+                        </node>
+                        <node text="Mensagem" resource-id="com.instagram.android:id/follow_list_row_large_follow_button" class="android.widget.TextView" content-desc="Enviar mensagem para pessoa57" clickable="true" long-clickable="true" bounds="[653,1735][968,1825]" />
+                        <node class="android.widget.ImageView" content-desc="Ignorar" clickable="true" bounds="[968,1724][1080,1836]" />
+                       </node>
+                      </node>
+                      <node class="android.widget.LinearLayout" clickable="true" bounds="[0,1882][1080,2085]">
+                       <node resource-id="com.instagram.android:id/follow_list_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,1882][1080,2085]">
+                        <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.FrameLayout" content-desc="Foto do perfil" clickable="true" long-clickable="true" bounds="[45,1888][236,2079]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.ImageView" content-desc="Foto do perfil" bounds="[61,1904][219,2062]" />
+                        </node>
+                        <node resource-id="com.instagram.android:id/follow_list_content_container" class="android.widget.LinearLayout" bounds="[236,1928][653,2038]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_info_container" class="android.widget.LinearLayout" bounds="[270,1928][420,1978]">
+                          <node text="outraconta" resource-id="com.instagram.android:id/follow_list_username" class="android.widget.TextView" bounds="[270,1928][420,1978]" />
+                         </node>
+                         <node text="Pessoa 42" resource-id="com.instagram.android:id/follow_list_subtitle" class="android.widget.TextView" bounds="[270,1978][585,2027]" />
+                        </node>
+                        <node text="Mensagem" resource-id="com.instagram.android:id/follow_list_row_large_follow_button" class="android.widget.TextView" content-desc="Enviar mensagem para Pessoa 42" clickable="true" long-clickable="true" bounds="[653,1938][968,2028]" />
+                        <node class="android.widget.ImageView" content-desc="Ignorar" clickable="true" bounds="[968,1927][1080,2039]" />
+                       </node>
+                      </node>
+                      <node class="android.widget.LinearLayout" clickable="true" bounds="[0,2085][1080,2273]">
+                       <node resource-id="com.instagram.android:id/follow_list_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,2085][1080,2273]">
+                        <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.FrameLayout" content-desc="Foto do perfil" clickable="true" long-clickable="true" bounds="[45,2091][236,2273]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.view.View" content-desc="@2131976614" bounds="[45,2091][236,2273]" />
+                         <node resource-id="com.instagram.android:id/follow_list_user_imageview" class="android.widget.ImageView" content-desc="Foto do perfil" bounds="[61,2107][219,2265]" />
+                        </node>
+                        <node resource-id="com.instagram.android:id/follow_list_content_container" class="android.widget.LinearLayout" bounds="[236,2131][653,2241]">
+                         <node resource-id="com.instagram.android:id/follow_list_user_info_container" class="android.widget.LinearLayout" bounds="[270,2131][558,2181]">
+                          <node text="pessoa58" resource-id="com.instagram.android:id/follow_list_username" class="android.widget.TextView" bounds="[270,2131][558,2181]" />
+                         </node>
+                         <node text="Pessoa 59" resource-id="com.instagram.android:id/follow_list_subtitle" class="android.widget.TextView" bounds="[270,2181][540,2230]" />
+                        </node>
+                        <node text="Mensagem" resource-id="com.instagram.android:id/follow_list_row_large_follow_button" class="android.widget.TextView" content-desc="Enviar mensagem para Pessoa 59" clickable="true" long-clickable="true" bounds="[653,2141][968,2231]" />
+                        <node class="android.widget.ImageView" content-desc="Ignorar" clickable="true" bounds="[968,2130][1080,2242]" />
+                       </node>
+                      </node>
+                     </node>
+                    </node>
+                   </node>
+                  </node>
+                 </node>
+                 <node class="android.view.View" bounds="[0,357][1080,360]" />
+                </node>
+               </node>
+              </node>
+             </node>
+            </node>
+           </node>
+           <node resource-id="com.instagram.android:id/action_bar_container" class="android.widget.FrameLayout" bounds="[0,65][1080,222]">
+            <node resource-id="com.instagram.android:id/action_bar_wrapper" class="android.widget.FrameLayout" bounds="[0,65][1080,222]">
+             <node resource-id="com.instagram.android:id/action_bar" class="android.widget.LinearLayout" clickable="true" bounds="[0,65][1080,222]">
+              <node resource-id="com.instagram.android:id/action_bar_new_title_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,65][865,222]">
+               <node resource-id="com.instagram.android:id/action_bar_button_back" class="android.widget.ImageView" content-desc="Voltar" clickable="true" bounds="[0,65][158,222]" />
+               <node class="android.widget.LinearLayout" bounds="[158,110][607,176]">
+                <node resource-id="com.instagram.android:id/action_bar_title_and_icons" class="android.widget.LinearLayout" bounds="[158,110][607,176]">
+                 <node text="minhaconta" resource-id="com.instagram.android:id/action_bar_title" class="android.widget.TextView" content-desc="minhaconta" clickable="true" bounds="[203,110][573,176]" />
+                </node>
+               </node>
+              </node>
+              <node class="android.widget.Button" content-desc="Central de amizade" clickable="true" bounds="[921,65][1057,222]" />
+             </node>
+            </node>
+           </node>
+          </node>
+         </node>
+        </node>
+        <node resource-id="com.instagram.android:id/bottom_sheet_camera_container" class="android.widget.FrameLayout" bounds="[0,64][1080,2273]" />
+       </node>
+       <node resource-id="com.instagram.android:id/modal_container" class="android.widget.FrameLayout" bounds="[0,0][1080,2273]" />
+       <node resource-id="com.instagram.android:id/overlay_layout_container" class="android.widget.FrameLayout" bounds="[0,0][1080,2273]" />
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</hierarchy>

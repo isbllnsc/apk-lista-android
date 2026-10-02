@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Arvore REAL anonimizada (app/src/test/tools/anonimizar_arvores.py). Nomes/@ = marcadores. -->
+<hierarchy fonte="uiautomator" origem="t01c.xml" tela="Configuracoes e atividade, arrastada 2x" largura="1080" altura="2408">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+  <node class="android.widget.LinearLayout" bounds="[0,0][1080,2408]">
+   <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+    <node resource-id="com.instagram.android:id/action_bar_root" class="android.widget.LinearLayout" bounds="[0,0][1080,2408]">
+     <node resource-id="android:id/content" class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+      <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+       <node resource-id="com.instagram.android:id/swipe_navigation_container" class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+        <node resource-id="com.instagram.android:id/layout_container_center_right_coordinator_layout" class="android.view.ViewGroup" bounds="[0,0][1080,2273]">
+         <node resource-id="com.instagram.android:id/layout_container_right" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]" />
+         <node resource-id="com.instagram.android:id/activity_and_camera_shared_views_main_container" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]" />
+         <node resource-id="com.instagram.android:id/layout_container_main_panel" class="android.view.ViewGroup" bounds="[0,65][1080,2273]">
+          <node resource-id="com.instagram.android:id/layout_container_main_wrapper" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]">
+           <node resource-id="com.instagram.android:id/layout_container_main" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]" />
+           <node resource-id="com.instagram.android:id/swipeable_tab_view_pager" class="androidx.viewpager.widget.ViewPager" bounds="[0,65][1080,2273]">
+            <node resource-id="com.instagram.android:id/swipeable_nav_view_pager_inner_recycler_view" class="androidx.recyclerview.widget.RecyclerView" scrollable="true" bounds="[0,65][1080,2273]">
+             <node class="android.widget.FrameLayout" bounds="[0,65][1080,2273]">
+              <node resource-id="com.instagram.android:id/layout_container_swipeable" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]">
+               <node class="androidx.compose.ui.platform.ComposeView" bounds="[0,65][1080,2273]">
+                <node class="android.view.View" bounds="[0,65][1080,2273]">
+                 <node class="android.view.View" bounds="[23,65][1057,157]">
+                  <node class="android.widget.Button" content-desc="Voltar" clickable="true" bounds="[13,77][148,157]" />
+                  <node class="android.view.View" bounds="[205,114][1034,157]">
+                   <node text="Configurações e atividade" class="android.widget.TextView" bounds="[205,114][828,157]" />
+                  </node>
+                 </node>
+                 <node class="android.view.View" scrollable="true" bounds="[0,223][1080,2273]">
+                  <node class="android.view.View" clickable="true" bounds="[0,157][1080,293]">
+                   <node class="android.view.View" content-desc="Bloqueados, 0" bounds="[0,223][1080,293]" />
+                   <node class="android.view.View" content-desc="Bloqueados, 0" bounds="[147,223][920,258]">
+                    <node text="Bloqueados" class="android.widget.TextView" bounds="[147,223][395,252]" />
+                   </node>
+                   <node class="android.view.View" bounds="[943,223][967,248]" />
+                   <node class="android.view.View" bounds="[990,223][1035,248]" />
+                   <node class="android.widget.Button" bounds="[0,223][1080,293]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,293][1080,429]">
+                   <node class="android.view.View" content-desc="Ocultar story e live" bounds="[0,293][1080,429]" />
+                   <node class="android.view.View" content-desc="Ocultar story e live" bounds="[147,328][967,394]">
+                    <node text="Ocultar story e live" class="android.widget.TextView" bounds="[147,334][540,388]" />
+                   </node>
+                   <node class="android.view.View" bounds="[990,339][1035,384]" />
+                   <node class="android.widget.Button" bounds="[0,293][1080,429]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,429][1080,565]">
+                   <node class="android.view.View" content-desc="Atividade no feed Amigos" bounds="[0,429][1080,565]" />
+                   <node class="android.view.View" content-desc="Atividade no feed Amigos" bounds="[147,464][967,530]">
+                    <node text="Atividade no feed Amigos" class="android.widget.TextView" bounds="[147,470][687,524]" />
+                   </node>
+                   <node class="android.view.View" bounds="[990,475][1035,520]" />
+                   <node class="android.widget.Button" bounds="[0,429][1080,565]" />
+                  </node>
+                  <node class="android.view.View" bounds="[0,506][1080,641]" />
+                  <node text="Como outras pessoas podem interagir com você" class="android.widget.TextView" bounds="[45,621][1035,667]" />
+                  <node class="android.view.View" clickable="true" bounds="[0,706][1080,842]">
+                   <node class="android.view.View" content-desc="Mensagens e respostas a stories" bounds="[0,706][1080,842]" />
+                   <node class="android.view.View" content-desc="Mensagens e respostas a stories" bounds="[147,741][967,807]">
+                    <node text="Mensagens e respostas a stories" class="android.widget.TextView" bounds="[147,747][832,801]" />
+                   </node>
+                   <node class="android.view.View" bounds="[990,752][1035,797]" />
+                   <node class="android.widget.Button" bounds="[0,706][1080,842]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,842][1080,978]">
+                   <node class="android.view.View" content-desc="Marcações e menções" bounds="[0,842][1080,978]" />
+                   <node class="android.view.View" content-desc="Marcações e menções" bounds="[147,877][967,943]">
+                    <node text="Marcações e menções" class="android.widget.TextView" bounds="[147,883][615,937]" />
+                   </node>
+                   <node class="android.view.View" bounds="[990,888][1035,933]" />
+                   <node class="android.widget.Button" bounds="[0,842][1080,978]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,978][1080,1114]">
+                   <node class="android.view.View" content-desc="Comentários" bounds="[0,978][1080,1114]" />
+                   <node class="android.view.View" content-desc="Comentários" bounds="[147,1013][967,1079]">
+                    <node text="Comentários" class="android.widget.TextView" bounds="[147,1019][414,1073]" />
+                   </node>
+                   <node class="android.view.View" bounds="[990,1024][1035,1069]" />
+                   <node class="android.widget.Button" bounds="[0,978][1080,1114]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,1114][1080,1250]">
+                   <node class="android.view.View" content-desc="Compartilhamento e reutilização" bounds="[0,1114][1080,1250]" />
+                   <node class="android.view.View" content-desc="Compartilhamento e reutilização" bounds="[147,1149][967,1215]">
+                    <node text="Compartilhamento e reutilização" class="android.widget.TextView" bounds="[147,1155][829,1209]" />
+                   </node>
+                   <node class="android.view.View" bounds="[990,1160][1035,1205]" />
+                   <node class="android.widget.Button" bounds="[0,1114][1080,1250]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,1250][1080,1386]">
+                   <node class="android.view.View" content-desc="Restritas, 0" bounds="[0,1250][1080,1386]" />
+                   <node class="android.view.View" content-desc="Restritas, 0" bounds="[147,1285][920,1351]">
+                    <node text="Restritas" class="android.widget.TextView" bounds="[147,1291][334,1345]" />
+                   </node>
+                   <node class="android.view.View" bounds="[943,1295][967,1341]" />
+                   <node class="android.view.View" bounds="[990,1296][1035,1341]" />
+                   <node class="android.widget.Button" bounds="[0,1250][1080,1386]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,1386][1080,1522]">
+                   <node class="android.view.View" content-desc="Limitar interações, Desativado" bounds="[0,1386][1080,1522]" />
+                   <node class="android.view.View" content-desc="Limitar interações, Desativado" bounds="[147,1421][742,1487]">
+                    <node text="Limitar interações" class="android.widget.TextView" bounds="[147,1427][524,1481]" />
+                   </node>
+                   <node class="android.view.View" bounds="[765,1431][967,1477]" />
+                   <node class="android.view.View" bounds="[990,1432][1035,1477]" />
+                   <node class="android.widget.Button" bounds="[0,1386][1080,1522]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,1522][1080,1658]">
+                   <node class="android.view.View" content-desc="Palavras ocultas" bounds="[0,1522][1080,1658]" />
+                   <node class="android.view.View" content-desc="Palavras ocultas" bounds="[147,1557][967,1623]">
+                    <node text="Palavras ocultas" class="android.widget.TextView" bounds="[147,1563][485,1617]" />
+                   </node>
+                   <node class="android.view.View" bounds="[990,1568][1035,1613]" />
+                   <node class="android.widget.Button" bounds="[0,1522][1080,1658]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,1658][1080,1794]">
+                   <node class="android.view.View" content-desc="Seguir e convidar amigos" bounds="[0,1658][1080,1794]" />
+                   <node class="android.view.View" content-desc="Seguir e convidar amigos" bounds="[147,1693][967,1759]">
+                    <node text="Seguir e convidar amigos" class="android.widget.TextView" bounds="[147,1699][676,1753]" />
+                   </node>
+                   <node class="android.view.View" bounds="[990,1704][1035,1749]" />
+                   <node class="android.widget.Button" bounds="[0,1658][1080,1794]" />
+                  </node>
+                  <node class="android.view.View" bounds="[0,1735][1080,1870]" />
+                  <node text="O que você vê" class="android.widget.TextView" bounds="[45,1850][1035,1896]" />
+                  <node class="android.view.View" clickable="true" bounds="[0,1935][1080,2071]">
+                   <node class="android.view.View" content-desc="Favoritos, 0" bounds="[0,1935][1080,2071]" />
+                   <node class="android.view.View" content-desc="Favoritos, 0" bounds="[147,1970][920,2036]">
+                    <node text="Favoritos" class="android.widget.TextView" bounds="[147,1976][341,2030]" />
+                   </node>
+                   <node class="android.view.View" bounds="[943,1980][967,2026]" />
+                   <node class="android.view.View" bounds="[990,1981][1035,2026]" />
+                   <node class="android.widget.Button" bounds="[0,1935][1080,2071]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,2071][1080,2207]">
+                   <node class="android.view.View" content-desc="Contas silenciadas, 0" bounds="[0,2071][1080,2207]" />
+                   <node class="android.view.View" content-desc="Contas silenciadas, 0" bounds="[147,2106][920,2172]">
+                    <node text="Contas silenciadas" class="android.widget.TextView" bounds="[147,2112][537,2166]" />
+                   </node>
+                   <node class="android.view.View" bounds="[943,2116][967,2162]" />
+                   <node class="android.view.View" bounds="[990,2117][1035,2162]" />
+                   <node class="android.widget.Button" bounds="[0,2071][1080,2207]" />
+                  </node>
+                  <node class="android.view.View" clickable="true" bounds="[0,2207][1080,2273]">
+                   <node class="android.view.View" content-desc="Preferências de conteúdo" bounds="[0,2207][1080,2273]" />
+                   <node class="android.view.View" content-desc="Preferências de conteúdo" bounds="[147,2242][967,2273]">
+                    <node text="Preferências de conteúdo" class="android.widget.TextView" bounds="[147,2248][686,2273]" />
+                   </node>
+                   <node class="android.view.View" bounds="[990,2253][1035,2273]" />
+                   <node class="android.widget.Button" bounds="[0,2207][1080,2273]" />
+                  </node>
+                 </node>
+                </node>
+               </node>
+              </node>
+             </node>
+            </node>
+           </node>
+          </node>
+         </node>
+        </node>
+        <node resource-id="com.instagram.android:id/bottom_sheet_camera_container" class="android.widget.FrameLayout" bounds="[0,64][1080,2273]" />
+       </node>
+       <node resource-id="com.instagram.android:id/modal_container" class="android.widget.FrameLayout" bounds="[0,0][1080,2273]" />
+       <node resource-id="com.instagram.android:id/overlay_layout_container" class="android.widget.FrameLayout" bounds="[0,0][1080,2273]" />
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</hierarchy>

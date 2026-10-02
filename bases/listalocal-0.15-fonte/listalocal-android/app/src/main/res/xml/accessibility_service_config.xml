@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Servico restrito ao WhatsApp e ao WhatsApp Business: nunca observa outros
+     apps. A lista e fechada e espelha com.listalocal.core.selectors.TargetApp.
+     Sem flagRequestFilterKeyEvents; sem captura de conteudo alem do necessario. -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds"
+    android:canRetrieveWindowContent="true"
+    android:packageNames="com.whatsapp,com.whatsapp.w4b"
+    android:notificationTimeout="100"
+    android:description="@string/accessibility_description" />

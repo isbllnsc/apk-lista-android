@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Arvore REAL anonimizada (app/src/test/tools/anonimizar_arvores.py). Nomes/@ = marcadores. -->
+<hierarchy fonte="views" origem="t05g_v.txt" tela="Nova mensagem com 2 pilulas: PREVIA DE GRUPO com campo" largura="1080" altura="2408" janela="com.instagram.android/com.instagram.modal.ModalActivity">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]" view-class="DecorView">
+  <node class="android.widget.LinearLayout" bounds="[0,0][1080,2408]" view-class="LinearLayout">
+   <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]" view-class="FrameLayout">
+    <node resource-id="com.instagram.android:id/action_bar_root" class="android.widget.LinearLayout" bounds="[0,0][1080,2408]" view-class="FitWindowsLinearLayout">
+     <node resource-id="android:id/content" class="android.widget.FrameLayout" bounds="[0,0][1080,2408]" view-class="ContentFrameLayout">
+      <node resource-id="com.instagram.android:id/layout_container_parent" class="android.view.ViewGroup" bounds="[0,0][1080,2408]" view-class="TouchInterceptorCoordinatorLayout">
+       <node resource-id="com.instagram.android:id/layout_container_main" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]" view-class="IgFrameLayout">
+        <node class="android.widget.LinearLayout" bounds="[0,65][1080,2273]" view-class="IgLinearLayout">
+         <node resource-id="com.instagram.android:id/direct_recipient_picker_action_bar" class="android.widget.FrameLayout" bounds="[0,65][1080,222]" view-class="TouchInterceptorFrameLayout">
+          <node resource-id="com.instagram.android:id/action_bar_wrapper" class="android.widget.FrameLayout" bounds="[0,65][1080,222]" view-class="IgFrameLayout">
+           <node resource-id="com.instagram.android:id/action_bar" class="android.widget.LinearLayout" clickable="true" bounds="[0,65][1080,222]" view-class="IgLinearLayout">
+            <node resource-id="com.instagram.android:id/action_bar_new_title_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,65][158,222]" view-class="IgLinearLayout">
+             <node resource-id="com.instagram.android:id/action_bar_button_back" class="android.widget.ImageView" clickable="true" bounds="[0,65][158,223]" view-class="IgSimpleImageView" />
+            </node>
+            <node resource-id="com.instagram.android:id/action_bar_textview_custom_title_container" class="android.widget.FrameLayout" bounds="[158,65][1057,222]" view-class="IgFrameLayout">
+             <node class="android.widget.LinearLayout" bounds="[175,65][1046,222]" view-class="IgLinearLayout">
+              <node resource-id="com.instagram.android:id/action_bar_title" class="android.widget.TextView" bounds="[209,104][1046,183]" view-class="IgTextView" />
+             </node>
+            </node>
+           </node>
+          </node>
+         </node>
+         <node resource-id="com.instagram.android:id/direct_recipients_selected_section" class="android.widget.LinearLayout" bounds="[0,222][1080,381]" view-class="IgLinearLayout">
+          <node text="Para:" resource-id="com.instagram.android:id/direct_new_chat_to_field" class="android.widget.TextView" bounds="[0,272][164,330]" view-class="IgTextView" suposto="1" />
+          <node resource-id="com.instagram.android:id/recipients_scroll_container" class="android.widget.HorizontalScrollView" scrollable="true" bounds="[164,222][1080,381]" view-class="NonFocusingHorizontalScrollView">
+           <node resource-id="com.instagram.android:id/recipients_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,245][1080,358]" view-class="IgLinearLayout">
+            <node class="android.view.ViewGroup" clickable="true" bounds="[0,260][460,342]" view-class="0CGd" />
+            <node class="android.view.ViewGroup" clickable="true" bounds="[471,260][911,342]" view-class="0CGd" />
+            <node class="android.widget.FrameLayout" bounds="[922,259][1080,344]" view-class="IgFrameLayout">
+             <node resource-id="com.instagram.android:id/recipient_picker_typeahead_pill" class="android.view.ViewGroup" bounds="[922,259][1080,344]" view-class="TypeaheadPill">
+              <node class="android.widget.FrameLayout" bounds="[922,259][1080,344]" view-class="IgFrameLayout">
+               <node resource-id="com.instagram.android:id/search_edit_text" class="android.widget.EditText" clickable="true" focused="true" bounds="[922,259][1035,344]" view-class="SearchWithDeleteEditText" />
+              </node>
+             </node>
+            </node>
+           </node>
+          </node>
+         </node>
+         <node resource-id="com.instagram.android:id/dynamic_fragment_container" class="android.widget.LinearLayout" bounds="[0,381][1080,2273]" view-class="IgLinearLayout">
+          <node resource-id="com.instagram.android:id/thread_fragment_container" class="android.widget.FrameLayout" bounds="[0,381][1080,1400]" view-class="TouchInterceptorFrameLayout">
+           <node resource-id="com.instagram.android:id/thread_background_view_container" class="android.widget.LinearLayout" bounds="[0,381][1080,1400]" view-class="IgLinearLayout">
+            <node resource-id="com.instagram.android:id/thread_background_view" class="android.widget.ImageView" bounds="[0,381][1080,1400]" view-class="IgSimpleImageView" />
+           </node>
+           <node resource-id="com.instagram.android:id/direct_thread_content_below_action_bar" class="android.view.ViewGroup" bounds="[0,381][1080,1400]" view-class="ConstraintLayout">
+            <node resource-id="com.instagram.android:id/thread_toggle_child_fragment_container" class="android.widget.FrameLayout" bounds="[0,381][1080,1400]" view-class="IgFrameLayout">
+             <node resource-id="com.instagram.android:id/thread_view_root" class="android.widget.LinearLayout" bounds="[0,381][1080,1400]" view-class="IgLinearLayout">
+              <node resource-id="com.instagram.android:id/message_thread_container" class="android.widget.FrameLayout" bounds="[0,381][1080,1400]" view-class="IgFrameLayout">
+               <node resource-id="com.instagram.android:id/meta_ai_voice_container" class="android.widget.FrameLayout" bounds="[0,381][1080,1232]" view-class="IgFrameLayout" />
+               <node resource-id="com.instagram.android:id/message_list_refresh_container" class="android.view.ViewGroup" bounds="[0,381][1080,1308]" view-class="RefreshableNestedScrollingParent">
+                <node resource-id="com.instagram.android:id/message_list" class="androidx.recyclerview.widget.RecyclerView" scrollable="true" bounds="[0,381][1080,1308]" view-class="CustomFadingEdgeRecyclerView">
+                 <node class="android.view.ViewGroup" bounds="[0,381][1080,1213]" view-class="MetaComposeView">
+                  <node class="android.view.ViewGroup" bounds="[0,381][1080,1213]" view-class="AndroidComposeView">
+                   <node class="android.view.ViewGroup" bounds="[0,381][1080,1213]" view-class="0Gps" />
+                  </node>
+                 </node>
+                </node>
+               </node>
+               <node class="android.widget.LinearLayout" bounds="[475,1079][604,1208]" view-class="IgLinearLayout">
+                <node class="android.widget.ImageView" bounds="[514,1118][565,1169]" view-class="IgImageView" />
+               </node>
+              </node>
+             </node>
+            </node>
+            <node resource-id="com.instagram.android:id/message_composer_bar" class="android.widget.FrameLayout" bounds="[0,1213][1080,1400]" view-class="TouchInterceptorFrameLayout">
+             <node resource-id="com.instagram.android:id/message_composer_reply_bar_container" class="android.widget.LinearLayout" bounds="[0,1213][1080,1400]" view-class="IgLinearLayout">
+              <node resource-id="com.instagram.android:id/row_thread_composer_container" class="android.widget.FrameLayout" bounds="[0,1213][1080,1400]" view-class="IgFrameLayout">
+               <node resource-id="com.instagram.android:id/blurred_text_area_background" class="android.widget.ImageView" bounds="[23,1236][1057,1377]" view-class="IgImageView" />
+               <node class="android.widget.LinearLayout" bounds="[23,1236][1057,1377]" view-class="IgLinearLayout">
+                <node resource-id="com.instagram.android:id/row_thread_composer_textarea_container" class="android.widget.LinearLayout" bounds="[23,1236][1057,1377]" view-class="IgLinearLayout">
+                 <node resource-id="com.instagram.android:id/row_thread_composer_shortcut_viewgroup" class="android.widget.FrameLayout" bounds="[40,1253][147,1360]" view-class="IgFrameLayout">
+                  <node resource-id="com.instagram.android:id/row_thread_composer_button_camera" class="android.widget.ImageView" clickable="true" bounds="[40,1253][147,1360]" view-class="ColorFilterAlphaImageView" />
+                 </node>
+                 <node resource-id="com.instagram.android:id/composer_content_container" class="android.widget.LinearLayout" bounds="[170,1236][581,1377]" view-class="IgLinearLayout">
+                  <node text="Mensagem..." resource-id="com.instagram.android:id/row_thread_composer_edittext" class="android.widget.EditText" clickable="true" bounds="[170,1236][581,1377]" view-class="ComposerAutoCompleteTextView" suposto="1" />
+                 </node>
+                 <node resource-id="com.instagram.android:id/row_thread_composer_buttons_container" class="android.view.ViewGroup" bounds="[581,1236][1037,1360]" view-class="ConstraintLayout">
+                  <node resource-id="com.instagram.android:id/row_thread_composer_voice" class="android.widget.ImageView" clickable="true" bounds="[581,1275][695,1343]" view-class="ColorFilterAlphaImageView" />
+                  <node resource-id="com.instagram.android:id/row_thread_composer_button_gallery" class="android.widget.ImageView" clickable="true" bounds="[695,1275][809,1343]" view-class="ColorFilterAlphaImageView" />
+                  <node resource-id="com.instagram.android:id/row_thread_composer_button_sticker" class="android.widget.ImageView" clickable="true" bounds="[809,1275][923,1343]" view-class="ColorFilterAlphaImageView" />
+                  <node resource-id="com.instagram.android:id/row_thread_composer_button_overflow" class="android.widget.ImageView" clickable="true" bounds="[923,1275][1037,1343]" view-class="ColorFilterAlphaImageView" />
+                 </node>
+                </node>
+               </node>
+              </node>
+             </node>
+            </node>
+           </node>
+           <node resource-id="com.instagram.android:id/message_actions_fragment" class="android.widget.FrameLayout" bounds="[0,381][1080,1400]" view-class="IgFrameLayout" />
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</hierarchy>

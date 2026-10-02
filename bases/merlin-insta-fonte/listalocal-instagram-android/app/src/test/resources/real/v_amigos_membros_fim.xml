@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Arvore REAL anonimizada (app/src/test/tools/anonimizar_arvores.py). Nomes/@ = marcadores. -->
+<hierarchy fonte="views" origem="_cu_v.txt" tela="Amigos Proximos: ultimos membros marcados, cabecalho Sugestoes, sugestoes" largura="1080" altura="2408" janela="com.instagram.android/com.instagram.modal.ModalActivity">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]" view-class="DecorView">
+  <node class="android.widget.LinearLayout" bounds="[0,0][1080,2408]" view-class="LinearLayout">
+   <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]" view-class="FrameLayout">
+    <node resource-id="com.instagram.android:id/action_bar_root" class="android.widget.LinearLayout" bounds="[0,0][1080,2408]" view-class="FitWindowsLinearLayout">
+     <node resource-id="android:id/content" class="android.widget.FrameLayout" bounds="[0,0][1080,2408]" view-class="ContentFrameLayout">
+      <node resource-id="com.instagram.android:id/layout_container_parent" class="android.view.ViewGroup" bounds="[0,0][1080,2408]" view-class="TouchInterceptorCoordinatorLayout">
+       <node resource-id="com.instagram.android:id/layout_container_main" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]" view-class="IgFrameLayout">
+        <node resource-id="com.instagram.android:id/main_container" class="android.widget.LinearLayout" bounds="[0,222][1080,2273]" view-class="IgLinearLayout">
+         <node text="Não enviamos notificações quando você edita sua lista Amigos Próximos. Como funciona." resource-id="com.instagram.android:id/audience_picker_disclaimer_text" class="android.widget.TextView" clickable="true" bounds="[0,222][1080,360]" view-class="IgTextView" suposto="1" />
+         <node resource-id="com.instagram.android:id/search_container" class="android.widget.LinearLayout" bounds="[0,383][1080,530]" view-class="IgLinearLayout">
+          <node resource-id="com.instagram.android:id/search_box" class="android.view.ViewGroup" bounds="[0,400][1080,530]" view-class="IgdsInlineSearchBox">
+           <node resource-id="com.instagram.android:id/search_row" class="android.view.ViewGroup" bounds="[45,406][1035,507]" view-class="ConstraintLayout">
+            <node resource-id="com.instagram.android:id/search_bar_glyph" class="android.widget.ImageView" enabled="false" bounds="[90,406][135,507]" view-class="ColorFilterAlphaImageView" />
+            <node resource-id="com.instagram.android:id/animated_hints_text_layout" class="android.view.ViewGroup" bounds="[180,406][1035,507]" view-class="AnimatedHintsTextLayout">
+             <node text="Pesquisar" resource-id="com.instagram.android:id/search_edit_text" class="android.widget.EditText" clickable="true" bounds="[180,406][1035,507]" view-class="BackInterceptEditText" suposto="1" />
+             <node class="android.widget.TextView" bounds="[180,406][1035,507]" view-class="TextView" />
+            </node>
+           </node>
+          </node>
+         </node>
+         <node resource-id="com.instagram.android:id/divider" class="android.view.ViewGroup" bounds="[0,530][1080,531]" view-class="IgView" />
+         <node resource-id="com.instagram.android:id/recycler_view" class="androidx.recyclerview.widget.RecyclerView" scrollable="true" bounds="[0,531][1080,2102]" view-class="RecyclerView">
+          <node resource-id="com.instagram.android:id/row_user_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,507][1080,676]" view-class="IgLinearLayout">
+           <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.view.ViewGroup" bounds="[45,524][180,659]" view-class="GradientSpinnerAvatarView">
+            <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.widget.ImageView" bounds="[50,529][174,653]" view-class="CircularImageView" />
+           </node>
+           <node resource-id="com.instagram.android:id/row_user_info_layout" class="android.widget.LinearLayout" bounds="[214,542][945,641]" view-class="IgLinearLayout">
+            <node text="amigo01" resource-id="com.instagram.android:id/row_user_username" class="android.widget.TextView" bounds="[214,542][485,592]" view-class="IgTextView" suposto="1" />
+            <node text="Amigo 01" resource-id="com.instagram.android:id/row_user_info" class="android.widget.TextView" bounds="[214,592][749,641]" view-class="IgTextView" suposto="1" />
+           </node>
+           <node class="android.widget.CheckBox" checked="true" bounds="[945,546][1035,636]" view-class="IgdsCheckBox" />
+          </node>
+          <node resource-id="com.instagram.android:id/row_user_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,676][1080,845]" view-class="IgLinearLayout">
+           <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.view.ViewGroup" bounds="[45,693][180,828]" view-class="GradientSpinnerAvatarView">
+            <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.widget.ImageView" bounds="[50,698][174,822]" view-class="CircularImageView" />
+           </node>
+           <node resource-id="com.instagram.android:id/row_user_info_layout" class="android.widget.LinearLayout" bounds="[214,711][945,810]" view-class="IgLinearLayout">
+            <node text="amigo02" resource-id="com.instagram.android:id/row_user_username" class="android.widget.TextView" bounds="[214,711][364,761]" view-class="IgTextView" suposto="1" />
+            <node text="Amigo 02" resource-id="com.instagram.android:id/row_user_info" class="android.widget.TextView" bounds="[214,761][529,810]" view-class="IgTextView" suposto="1" />
+           </node>
+           <node class="android.widget.CheckBox" checked="true" bounds="[945,715][1035,805]" view-class="IgdsCheckBox" />
+          </node>
+          <node resource-id="com.instagram.android:id/row_user_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,845][1080,1014]" view-class="IgLinearLayout">
+           <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.view.ViewGroup" bounds="[45,862][180,997]" view-class="GradientSpinnerAvatarView">
+            <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.widget.ImageView" bounds="[50,867][174,991]" view-class="CircularImageView" />
+           </node>
+           <node resource-id="com.instagram.android:id/row_user_info_layout" class="android.widget.LinearLayout" bounds="[214,880][945,979]" view-class="IgLinearLayout">
+            <node text="amigo03" resource-id="com.instagram.android:id/row_user_username" class="android.widget.TextView" bounds="[214,880][416,930]" view-class="IgTextView" suposto="1" />
+            <node text="Amigo 03" resource-id="com.instagram.android:id/row_user_info" class="android.widget.TextView" bounds="[214,930][537,979]" view-class="IgTextView" suposto="1" />
+           </node>
+           <node class="android.widget.CheckBox" checked="true" bounds="[945,884][1035,974]" view-class="IgdsCheckBox" />
+          </node>
+          <node resource-id="com.instagram.android:id/frame_header" class="android.view.ViewGroup" bounds="[0,1039][1080,1174]" view-class="ConstraintLayout">
+           <node resource-id="com.instagram.android:id/row_header_textview" class="android.widget.TextView" bounds="[0,1039][1080,1174]" view-class="TitleTextView" />
+          </node>
+          <node resource-id="com.instagram.android:id/row_user_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,1175][1080,1344]" view-class="IgLinearLayout">
+           <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.view.ViewGroup" bounds="[45,1192][180,1327]" view-class="GradientSpinnerAvatarView">
+            <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.widget.ImageView" bounds="[50,1197][174,1321]" view-class="CircularImageView" />
+           </node>
+           <node resource-id="com.instagram.android:id/row_user_info_layout" class="android.widget.LinearLayout" bounds="[214,1210][945,1309]" view-class="IgLinearLayout">
+            <node text="amigo04" resource-id="com.instagram.android:id/row_user_username" class="android.widget.TextView" bounds="[214,1210][528,1260]" view-class="IgTextView" suposto="1" />
+            <node text="Amigo 04" resource-id="com.instagram.android:id/row_user_info" class="android.widget.TextView" bounds="[214,1260][513,1309]" view-class="IgTextView" suposto="1" />
+           </node>
+           <node class="android.widget.CheckBox" bounds="[945,1214][1035,1304]" view-class="IgdsCheckBox" />
+          </node>
+          <node resource-id="com.instagram.android:id/row_user_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,1344][1080,1513]" view-class="IgLinearLayout">
+           <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.view.ViewGroup" bounds="[45,1361][180,1496]" view-class="GradientSpinnerAvatarView">
+            <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.widget.ImageView" bounds="[50,1366][174,1490]" view-class="CircularImageView" />
+           </node>
+           <node resource-id="com.instagram.android:id/row_user_info_layout" class="android.widget.LinearLayout" bounds="[214,1379][945,1478]" view-class="IgLinearLayout">
+            <node text="amigo05" resource-id="com.instagram.android:id/row_user_username" class="android.widget.TextView" bounds="[214,1379][485,1429]" view-class="IgTextView" suposto="1" />
+            <node text="Amigo 05" resource-id="com.instagram.android:id/row_user_info" class="android.widget.TextView" bounds="[214,1429][511,1478]" view-class="IgTextView" suposto="1" />
+           </node>
+           <node class="android.widget.CheckBox" bounds="[945,1383][1035,1473]" view-class="IgdsCheckBox" />
+          </node>
+          <node resource-id="com.instagram.android:id/row_user_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,1513][1080,1682]" view-class="IgLinearLayout">
+           <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.view.ViewGroup" bounds="[45,1530][180,1665]" view-class="GradientSpinnerAvatarView">
+            <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.widget.ImageView" bounds="[50,1535][174,1659]" view-class="CircularImageView" />
+           </node>
+           <node resource-id="com.instagram.android:id/row_user_info_layout" class="android.widget.LinearLayout" bounds="[214,1548][945,1647]" view-class="IgLinearLayout">
+            <node text="amigo06" resource-id="com.instagram.android:id/row_user_username" class="android.widget.TextView" bounds="[214,1548][548,1598]" view-class="IgTextView" suposto="1" />
+            <node text="Amigo 06" resource-id="com.instagram.android:id/row_user_info" class="android.widget.TextView" bounds="[214,1598][603,1647]" view-class="IgTextView" suposto="1" />
+           </node>
+           <node class="android.widget.CheckBox" bounds="[945,1552][1035,1642]" view-class="IgdsCheckBox" />
+          </node>
+          <node resource-id="com.instagram.android:id/row_user_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,1682][1080,1851]" view-class="IgLinearLayout">
+           <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.view.ViewGroup" bounds="[45,1699][180,1834]" view-class="GradientSpinnerAvatarView">
+            <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.widget.ImageView" bounds="[50,1704][174,1828]" view-class="CircularImageView" />
+           </node>
+           <node resource-id="com.instagram.android:id/row_user_info_layout" class="android.widget.LinearLayout" bounds="[214,1717][945,1816]" view-class="IgLinearLayout">
+            <node text="amigo07" resource-id="com.instagram.android:id/row_user_username" class="android.widget.TextView" bounds="[214,1717][386,1767]" view-class="IgTextView" suposto="1" />
+            <node text="Amigo 07" resource-id="com.instagram.android:id/row_user_info" class="android.widget.TextView" bounds="[214,1767][361,1816]" view-class="IgTextView" suposto="1" />
+           </node>
+           <node class="android.widget.CheckBox" bounds="[945,1721][1035,1811]" view-class="IgdsCheckBox" />
+          </node>
+          <node resource-id="com.instagram.android:id/row_user_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,1851][1080,2020]" view-class="IgLinearLayout">
+           <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.view.ViewGroup" bounds="[45,1868][180,2003]" view-class="GradientSpinnerAvatarView">
+            <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.widget.ImageView" bounds="[50,1873][174,1997]" view-class="CircularImageView" />
+           </node>
+           <node resource-id="com.instagram.android:id/row_user_info_layout" class="android.widget.LinearLayout" bounds="[214,1886][945,1985]" view-class="IgLinearLayout">
+            <node text="amigo08" resource-id="com.instagram.android:id/row_user_username" class="android.widget.TextView" bounds="[214,1886][448,1936]" view-class="IgTextView" suposto="1" />
+            <node text="Amigo 08" resource-id="com.instagram.android:id/row_user_info" class="android.widget.TextView" bounds="[214,1936][471,1985]" view-class="IgTextView" suposto="1" />
+           </node>
+           <node class="android.widget.CheckBox" bounds="[945,1890][1035,1980]" view-class="IgdsCheckBox" />
+          </node>
+          <node resource-id="com.instagram.android:id/row_user_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,2020][1080,2189]" view-class="IgLinearLayout">
+           <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.view.ViewGroup" bounds="[45,2037][180,2172]" view-class="GradientSpinnerAvatarView">
+            <node resource-id="com.instagram.android:id/selectable_user_row_avatar" class="android.widget.ImageView" bounds="[50,2042][174,2166]" view-class="CircularImageView" />
+           </node>
+           <node resource-id="com.instagram.android:id/row_user_info_layout" class="android.widget.LinearLayout" bounds="[214,2055][945,2154]" view-class="IgLinearLayout">
+            <node text="amigo09" resource-id="com.instagram.android:id/row_user_username" class="android.widget.TextView" bounds="[214,2055][464,2105]" view-class="IgTextView" suposto="1" />
+            <node text="Amigo 09" resource-id="com.instagram.android:id/row_user_info" class="android.widget.TextView" bounds="[214,2105][456,2154]" view-class="IgTextView" suposto="1" />
+           </node>
+           <node class="android.widget.CheckBox" bounds="[945,2059][1035,2149]" view-class="IgdsCheckBox" />
+          </node>
+         </node>
+         <node resource-id="com.instagram.android:id/divider" class="android.view.ViewGroup" bounds="[0,2102][1080,2103]" view-class="IgView" />
+         <node text="Concluir" resource-id="com.instagram.android:id/done_button" class="android.widget.Button" clickable="true" bounds="[45,2126][1035,2250]" view-class="IgdsButton" suposto="1">
+          <node class="android.widget.TextView" bounds="[463,2163][617,2213]" view-class="TextView" />
+         </node>
+        </node>
+       </node>
+       <node resource-id="com.instagram.android:id/action_bar_container" class="android.widget.FrameLayout" bounds="[0,65][1080,222]" view-class="TouchInterceptorFrameLayout">
+        <node resource-id="com.instagram.android:id/action_bar_wrapper" class="android.widget.FrameLayout" bounds="[0,65][1080,222]" view-class="IgFrameLayout">
+         <node resource-id="com.instagram.android:id/action_bar" class="android.widget.LinearLayout" clickable="true" bounds="[0,65][1080,222]" view-class="IgLinearLayout">
+          <node resource-id="com.instagram.android:id/action_bar_new_title_container" class="android.widget.LinearLayout" clickable="true" bounds="[0,65][1001,222]" view-class="IgLinearLayout">
+           <node resource-id="com.instagram.android:id/action_bar_button_back" class="android.widget.ImageView" clickable="true" bounds="[0,65][158,223]" view-class="IgSimpleImageView" />
+           <node class="android.widget.LinearLayout" bounds="[158,110][702,176]" view-class="IgLinearLayout">
+            <node resource-id="com.instagram.android:id/action_bar_title_and_icons" class="android.widget.LinearLayout" bounds="[158,110][702,176]" view-class="IgLinearLayout">
+             <node resource-id="com.instagram.android:id/action_bar_title" class="android.widget.TextView" clickable="true" bounds="[203,110][668,176]" view-class="IgTextView" />
+            </node>
+           </node>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</hierarchy>

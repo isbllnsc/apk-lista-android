@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Merlin</string>
+    <string name="accessibility_description">Ajuda a enviar a sua mensagem, uma a uma, aos seus seguidores no Instagram, e a montar a lista Amigos Próximos. Ao iniciar a operação, lê os controles visíveis do Instagram e toca neles por você. Só age no Instagram. Você pode desligar o serviço em Configurações, Acessibilidade.</string>
+    <string name="autoria">Desenvolvido por João Victor Girão — jvictorgirao@poli.ufrj.br</string>
+    <string name="copyright">© 2026 João Victor Girão. Todos os direitos reservados.</string>
+    <string name="accessibility_description_wa">Ajuda a enviar mensagens pelo WhatsApp, uma a uma, aos seus contatos da agenda. Lê os controles visíveis do WhatsApp e toca neles por você. Só age no WhatsApp. Você pode desligar em Configurações, Acessibilidade.</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Servico restrito ao Instagram: nunca observa outros apps. A lista e fechada
+     e espelha com.listalocal.core.selectors.TargetApp.
+     flagRetrieveInteractiveWindows: no Instagram a "janela ativa" fica presa na
+     atividade principal enquanto a conversa (ModalActivity) esta na frente
+     (INSTAGRAM-APP-REAL.md, 0.1 e 7.1); o servico le a janela do Instagram de
+     maior camada. canPerformGestures: EXCECAO documentada e unica ao "cliques por
+     no, sem coordenada de pixel". So a tela Bloks "Configuracoes e atividade" nao
+     rola nem aceita ACTION_CLICK pela acessibilidade (t01a-t01d); SO ALI o app
+     arrasta a tela e toca no ponto do item "Amigos Proximos", com bounds lidos do
+     no vivo no instante do gesto (NodeOps.centro) e a tela conferida antes e depois
+     (CloseFriendsFlow.abrir). Todo o resto (Direct, marcar, Concluir) e por no
+     (performAction). Sem flagRequestFilterKeyEvents; sem captura alem do necessario. -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds|flagRetrieveInteractiveWindows"
+    android:canRetrieveWindowContent="true"
+    android:canPerformGestures="true"
+    android:packageNames="com.instagram.android"
+    android:notificationTimeout="100"
+    android:description="@string/accessibility_description" />

@@ -1,0 +1,344 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Arvore REAL anonimizada (app/src/test/tools/anonimizar_arvores.py). Nomes/@ = marcadores. -->
+<hierarchy fonte="uiautomator" origem="t15a.xml" tela="aba Perfil com a folha 'Criar' aberta por cima" largura="1080" altura="2408">
+ <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+  <node class="android.widget.LinearLayout" bounds="[0,0][1080,2408]">
+   <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+    <node resource-id="com.instagram.android:id/action_bar_root" class="android.widget.LinearLayout" bounds="[0,0][1080,2408]">
+     <node resource-id="android:id/content" class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+      <node class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+       <node resource-id="com.instagram.android:id/swipe_navigation_container" class="android.widget.FrameLayout" bounds="[0,0][1080,2408]">
+        <node resource-id="com.instagram.android:id/layout_container_center_right_coordinator_layout" class="android.view.ViewGroup" bounds="[0,0][1080,2273]">
+         <node resource-id="com.instagram.android:id/layout_container_right" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]" />
+         <node resource-id="com.instagram.android:id/activity_and_camera_shared_views_main_container" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]">
+          <node resource-id="com.instagram.android:id/bottom_sheet_container" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]">
+           <node resource-id="com.instagram.android:id/background_dimmer" class="android.widget.Button" content-desc="@2131955723" clickable="true" bounds="[0,65][1080,2273]" />
+           <node resource-id="com.instagram.android:id/layout_container_bottom_sheet" class="android.widget.FrameLayout" clickable="true" bounds="[0,863][1080,2273]">
+            <node resource-id="com.instagram.android:id/bottom_sheet_container" class="android.view.ViewGroup" bounds="[0,863][1080,2273]">
+             <node resource-id="com.instagram.android:id/bottom_sheet_drag_handle_frame" class="android.widget.FrameLayout" bounds="[0,863][1080,931]">
+              <node resource-id="com.instagram.android:id/bottom_sheet_drag_handle_prism" class="android.widget.ImageView" bounds="[495,863][585,931]" />
+             </node>
+             <node resource-id="com.instagram.android:id/nav_buttons_and_title_container" class="android.view.ViewGroup" bounds="[0,931][1080,1056]">
+              <node text="Criar" resource-id="com.instagram.android:id/title_text_view" class="android.widget.TextView" bounds="[281,931][799,1056]" />
+             </node>
+             <node resource-id="com.instagram.android:id/bottom_sheet_nav_bar_divider" class="android.view.View" bounds="[0,1056][1080,1057]" />
+             <node resource-id="com.instagram.android:id/bottom_sheet_container_view" class="android.widget.FrameLayout" bounds="[0,1057][1080,2273]">
+              <node resource-id="com.instagram.android:id/recycler_view" class="androidx.recyclerview.widget.RecyclerView" bounds="[0,1057][1080,2273]">
+               <node class="android.widget.Button" content-desc="Criar novo reel" clickable="true" bounds="[0,1057][1080,1209]">
+                <node resource-id="com.instagram.android:id/image" class="android.widget.ImageView" bounds="[45,1099][113,1167]" />
+                <node resource-id="com.instagram.android:id/label_container" class="android.view.ViewGroup" bounds="[159,1057][1035,1209]">
+                 <node resource-id="com.instagram.android:id/labels_wrapper" class="android.view.ViewGroup" bounds="[159,1104][250,1161]">
+                  <node text="Reel" resource-id="com.instagram.android:id/label" class="android.widget.TextView" bounds="[159,1104][250,1161]" />
+                 </node>
+                 <node resource-id="com.instagram.android:id/divider" class="android.view.View" bounds="[159,1208][1035,1209]" />
+                </node>
+               </node>
+               <node class="android.widget.Button" content-desc="Edits" clickable="true" bounds="[0,1209][1080,1361]">
+                <node resource-id="com.instagram.android:id/image" class="android.widget.ImageView" bounds="[45,1251][113,1319]" />
+                <node resource-id="com.instagram.android:id/label_container" class="android.view.ViewGroup" bounds="[159,1209][1035,1361]">
+                 <node resource-id="com.instagram.android:id/labels_wrapper" class="android.view.ViewGroup" bounds="[159,1256][265,1313]">
+                  <node text="Edits" resource-id="com.instagram.android:id/label" class="android.widget.TextView" bounds="[159,1256][265,1313]" />
+                 </node>
+                 <node text="NOVO" resource-id="com.instagram.android:id/pill_new_badge" class="android.widget.TextView" bounds="[923,1256][1035,1314]" />
+                 <node resource-id="com.instagram.android:id/divider" class="android.view.View" bounds="[159,1360][1035,1361]" />
+                </node>
+               </node>
+               <node class="android.widget.Button" content-desc="Criar novo post" clickable="true" bounds="[0,1361][1080,1513]">
+                <node resource-id="com.instagram.android:id/image" class="android.widget.ImageView" bounds="[45,1403][113,1471]" />
+                <node resource-id="com.instagram.android:id/label_container" class="android.view.ViewGroup" bounds="[159,1361][1035,1513]">
+                 <node resource-id="com.instagram.android:id/labels_wrapper" class="android.view.ViewGroup" bounds="[159,1408][255,1465]">
+                  <node text="Post" resource-id="com.instagram.android:id/label" class="android.widget.TextView" bounds="[159,1408][255,1465]" />
+                 </node>
+                 <node resource-id="com.instagram.android:id/divider" class="android.view.View" bounds="[159,1512][1035,1513]" />
+                </node>
+               </node>
+               <node class="android.widget.Button" content-desc="Criar novo story" clickable="true" bounds="[0,1513][1080,1665]">
+                <node resource-id="com.instagram.android:id/image" class="android.widget.ImageView" bounds="[45,1555][113,1623]" />
+                <node resource-id="com.instagram.android:id/label_container" class="android.view.ViewGroup" bounds="[159,1513][1035,1665]">
+                 <node resource-id="com.instagram.android:id/labels_wrapper" class="android.view.ViewGroup" bounds="[159,1560][275,1617]">
+                  <node text="Story" resource-id="com.instagram.android:id/label" class="android.widget.TextView" bounds="[159,1560][275,1617]" />
+                 </node>
+                 <node resource-id="com.instagram.android:id/divider" class="android.view.View" bounds="[159,1664][1035,1665]" />
+                </node>
+               </node>
+               <node resource-id="com.instagram.android:id/universal_creation_menu_story_highlight" class="android.widget.Button" content-desc="Destaques" clickable="true" bounds="[0,1665][1080,1817]">
+                <node resource-id="com.instagram.android:id/image" class="android.widget.ImageView" bounds="[45,1707][113,1775]" />
+                <node resource-id="com.instagram.android:id/label_container" class="android.view.ViewGroup" bounds="[159,1665][1035,1817]">
+                 <node resource-id="com.instagram.android:id/labels_wrapper" class="android.view.ViewGroup" bounds="[159,1712][380,1769]">
+                  <node text="Destaques" resource-id="com.instagram.android:id/label" class="android.widget.TextView" bounds="[159,1712][380,1769]" />
+                 </node>
+                 <node resource-id="com.instagram.android:id/divider" class="android.view.View" bounds="[159,1816][1035,1817]" />
+                </node>
+               </node>
+               <node class="android.widget.Button" content-desc="Criar novo vídeo ao vivo" clickable="true" bounds="[0,1817][1080,1969]">
+                <node resource-id="com.instagram.android:id/image" class="android.widget.ImageView" bounds="[45,1859][113,1927]" />
+                <node resource-id="com.instagram.android:id/label_container" class="android.view.ViewGroup" bounds="[159,1817][1035,1969]">
+                 <node resource-id="com.instagram.android:id/labels_wrapper" class="android.view.ViewGroup" bounds="[159,1864][248,1921]">
+                  <node text="Live" resource-id="com.instagram.android:id/label" class="android.widget.TextView" bounds="[159,1864][248,1921]" />
+                 </node>
+                 <node resource-id="com.instagram.android:id/divider" class="android.view.View" bounds="[159,1968][1035,1969]" />
+                </node>
+               </node>
+               <node class="android.widget.Button" content-desc="Anúncio" clickable="true" bounds="[0,1969][1080,2121]">
+                <node resource-id="com.instagram.android:id/image" class="android.widget.ImageView" bounds="[45,2011][113,2079]" />
+                <node resource-id="com.instagram.android:id/label_container" class="android.view.ViewGroup" bounds="[159,1969][1035,2121]">
+                 <node resource-id="com.instagram.android:id/labels_wrapper" class="android.view.ViewGroup" bounds="[159,2016][333,2073]">
+                  <node text="Anúncio" resource-id="com.instagram.android:id/label" class="android.widget.TextView" bounds="[159,2016][333,2073]" />
+                 </node>
+                 <node resource-id="com.instagram.android:id/divider" class="android.view.View" bounds="[159,2120][1035,2121]" />
+                </node>
+               </node>
+              </node>
+             </node>
+            </node>
+           </node>
+          </node>
+         </node>
+         <node resource-id="com.instagram.android:id/layout_container_main_panel" class="android.view.ViewGroup" bounds="[0,65][1080,2273]">
+          <node resource-id="com.instagram.android:id/layout_container_main_wrapper" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]">
+           <node resource-id="com.instagram.android:id/layout_container_main" class="android.widget.FrameLayout" bounds="[0,65][1080,2273]" />
+           <node resource-id="com.instagram.android:id/swipeable_tab_view_pager" class="androidx.viewpager.widget.ViewPager" scrollable="true" bounds="[0,65][1080,2138]">
+            <node resource-id="com.instagram.android:id/swipeable_nav_view_pager_inner_recycler_view" class="androidx.recyclerview.widget.RecyclerView" scrollable="true" bounds="[0,65][1080,2138]">
+             <node class="android.widget.FrameLayout" bounds="[0,65][1080,2138]">
+              <node resource-id="com.instagram.android:id/layout_container_swipeable" class="android.widget.FrameLayout" bounds="[0,65][1080,2138]">
+               <node resource-id="com.instagram.android:id/user_detail_fragment" class="android.widget.FrameLayout" bounds="[0,65][1080,2138]">
+                <node class="android.widget.FrameLayout" bounds="[0,65][1080,2138]">
+                 <node resource-id="com.instagram.android:id/coordinator_root_layout" class="android.view.ViewGroup" bounds="[0,65][1080,2138]">
+                  <node class="android.widget.FrameLayout" bounds="[0,65][1080,2138]" />
+                  <node resource-id="com.instagram.android:id/swipe_refresh_animated_progressbar_container_background" class="android.view.View" bounds="[0,222][1080,223]" />
+                  <node resource-id="com.instagram.android:id/tab_appbar" class="android.widget.LinearLayout" bounds="[0,223][1080,1696]">
+                   <node resource-id="com.instagram.android:id/profile_header_container" class="android.widget.LinearLayout" bounds="[0,223][1080,1696]">
+                    <node resource-id="com.instagram.android:id/profile_header_fixed_list" class="android.widget.LinearLayout" bounds="[0,223][1080,1560]">
+                     <node resource-id="com.instagram.android:id/row_profile_header" class="android.view.ViewGroup" bounds="[0,223][1080,932]">
+                      <node resource-id="com.instagram.android:id/profile_header_avatar_container_top_left_stub" class="android.view.ViewGroup" bounds="[45,223][293,544]">
+                       <node resource-id="com.instagram.android:id/pog_note_bubble_container" class="android.view.ViewGroup" bounds="[45,223][293,544]">
+                        <node resource-id="com.instagram.android:id/pog_note_bubble_view" class="android.widget.Button" clickable="true" bounds="[45,223][293,407]">
+                         <node resource-id="com.instagram.android:id/pog_note_bubble_root_view" class="android.widget.LinearLayout" bounds="[45,223][293,407]">
+                          <node resource-id="com.instagram.android:id/pog_note_bubble_card_view" class="android.widget.FrameLayout" bounds="[68,234][270,384]">
+                           <node resource-id="com.instagram.android:id/pog_bubble_text_container" class="android.widget.LinearLayout" bounds="[68,234][270,384]">
+                            <node text="Minha obsessão é…" resource-id="com.instagram.android:id/pog_bubble_text" class="android.widget.TextView" bounds="[68,257][270,361]" />
+                           </node>
+                          </node>
+                         </node>
+                        </node>
+                       </node>
+                       <node class="android.view.ViewGroup" bounds="[45,296][293,544]">
+                        <node resource-id="com.instagram.android:id/reel_ring" class="android.view.View" bounds="[45,296][293,544]" />
+                        <node resource-id="com.instagram.android:id/row_profile_header_imageview_frame_layout" class="android.widget.FrameLayout" clickable="true" long-clickable="true" bounds="[65,316][273,524]">
+                         <node resource-id="com.instagram.android:id/row_profile_header_imageview" class="android.widget.Button" content-desc="Seu perfil. Story não visto" bounds="[65,316][273,524]" />
+                        </node>
+                        <node resource-id="com.instagram.android:id/reel_empty_badge" class="android.widget.ImageView" content-desc="Adicionar ao story" clickable="true" bounds="[211,462][273,524]" />
+                       </node>
+                      </node>
+                      <node text="Pessoa 01  " resource-id="com.instagram.android:id/profile_header_full_name_above_vanity" class="android.widget.TextView" content-desc="Pessoa 01  " bounds="[338,295][789,342]" />
+                      <node resource-id="com.instagram.android:id/profile_header_metrics_full_width" class="android.widget.LinearLayout" bounds="[338,342][1035,495]">
+                       <node resource-id="com.instagram.android:id/profile_header_post_count_front_familiar" content-desc="15posts" clickable="true" bounds="[338,342][510,495]">
+                        <node text="15" resource-id="com.instagram.android:id/profile_header_familiar_post_count_value" class="android.widget.TextView" bounds="[338,365][384,423]" />
+                        <node text="posts" resource-id="com.instagram.android:id/profile_header_familiar_post_count_label" class="android.widget.TextView" bounds="[338,423][440,472]" />
+                       </node>
+                       <node resource-id="com.instagram.android:id/profile_header_followers_stacked_familiar" content-desc="388seguidores" clickable="true" bounds="[510,342][798,495]">
+                        <node text="388" resource-id="com.instagram.android:id/profile_header_familiar_followers_value" class="android.widget.TextView" bounds="[527,365][607,423]" />
+                        <node text="seguidores" resource-id="com.instagram.android:id/profile_header_familiar_followers_label" class="android.widget.TextView" bounds="[527,423][727,472]" />
+                       </node>
+                       <node resource-id="com.instagram.android:id/profile_header_following_stacked_familiar" content-desc="413seguindo" clickable="true" bounds="[798,342][1035,495]">
+                        <node text="413" resource-id="com.instagram.android:id/profile_header_familiar_following_value" class="android.widget.TextView" bounds="[815,365][886,423]" />
+                        <node text="seguindo" resource-id="com.instagram.android:id/profile_header_familiar_following_label" class="android.widget.TextView" bounds="[815,423][981,472]" />
+                       </node>
+                      </node>
+                      <node resource-id="com.instagram.android:id/profile_user_info_compose_view" class="androidx.compose.ui.platform.ComposeView" bounds="[45,544][1035,747]">
+                       <node class="android.view.View" bounds="[45,544][1035,747]">
+                        <node class="android.view.View" clickable="true" bounds="[45,544][1035,747]">
+                         <node text="Pessoa 02" class="android.widget.TextView" bounds="[45,544][1035,747]" />
+                        </node>
+                       </node>
+                      </node>
+                      <node resource-id="com.instagram.android:id/profile_links_view" class="android.view.ViewGroup" bounds="[45,758][713,808]">
+                       <node resource-id="com.instagram.android:id/button_1" class="android.widget.LinearLayout" bounds="[45,758][713,808]">
+                        <node resource-id="com.instagram.android:id/icon_view" class="android.widget.ImageView" bounds="[45,760][90,805]" />
+                        <node text="Pessoa 03" resource-id="com.instagram.android:id/text_view" class="android.widget.Button" clickable="true" bounds="[101,758][713,808]" />
+                       </node>
+                      </node>
+                      <node resource-id="com.instagram.android:id/banner_row" class="android.widget.LinearLayout" bounds="[45,831][1035,898]">
+                       <node class="androidx.recyclerview.widget.RecyclerView" bounds="[45,831][1035,898]">
+                        <node class="android.widget.Button" clickable="true" bounds="[45,831][443,898]">
+                         <node resource-id="com.instagram.android:id/igds_prism_chip_icon" class="android.widget.ImageView" clickable="true" bounds="[68,847][102,881]" />
+                         <node text="Adicionar banners" resource-id="com.instagram.android:id/igds_prism_chip_label" class="android.widget.TextView" bounds="[113,842][409,887]" />
+                        </node>
+                       </node>
+                      </node>
+                     </node>
+                     <node class="android.widget.FrameLayout" bounds="[0,932][1080,1115]">
+                      <node resource-id="com.instagram.android:id/bloks_container" class="android.widget.FrameLayout" bounds="[0,932][1080,1115]">
+                       <node class="android.view.ViewGroup" bounds="[0,932][1080,1115]">
+                        <node class="android.view.ViewGroup" clickable="true" bounds="[0,932][1080,1115]">
+                         <node class="android.view.ViewGroup" bounds="[34,932][1046,1090]">
+                          <node text="Painel profissional" class="android.widget.Button" content-desc="Ponto de entrada do painel profissional" bounds="[73,965][409,1015]" />
+                          <node text="1,9 mil visualizações nos últimos 30 dias." class="android.view.View" content-desc="1,9 mil visualizações nos últimos 30 dias." bounds="[73,1015][696,1057]" />
+                         </node>
+                        </node>
+                       </node>
+                      </node>
+                     </node>
+                     <node class="android.widget.LinearLayout" bounds="[0,1115][1080,1205]">
+                      <node resource-id="com.instagram.android:id/profile_header_actions_top_row" class="android.widget.LinearLayout" bounds="[0,1115][1080,1205]">
+                       <node class="android.view.ViewGroup" bounds="[33,1115][532,1205]">
+                        <node resource-id="com.instagram.android:id/button_container" class="android.widget.Button" content-desc="Editar perfil" clickable="true" bounds="[33,1115][532,1205]">
+                         <node text="Editar perfil" class="android.widget.TextView" bounds="[173,1135][391,1185]" />
+                        </node>
+                       </node>
+                       <node class="android.view.ViewGroup" bounds="[548,1115][1047,1205]">
+                        <node resource-id="com.instagram.android:id/button_container" class="android.widget.Button" content-desc="Compartilhar perfil" clickable="true" bounds="[548,1115][1047,1205]">
+                         <node text="Compartilhar perfil" class="android.widget.TextView" bounds="[621,1135][973,1185]" />
+                        </node>
+                       </node>
+                      </node>
+                     </node>
+                     <node resource-id="com.instagram.android:id/highlights_tray" class="android.widget.LinearLayout" bounds="[0,1239][1080,1532]">
+                      <node resource-id="com.instagram.android:id/highlights_reel_tray_recycler_view" class="androidx.recyclerview.widget.RecyclerView" bounds="[0,1239][1080,1532]">
+                       <node class="android.widget.LinearLayout" bounds="[6,1239][266,1532]">
+                        <node resource-id="com.instagram.android:id/create_highlight_button_view" class="android.widget.LinearLayout" content-desc="Criar destaque" clickable="true" bounds="[6,1239][266,1532]">
+                         <node resource-id="com.instagram.android:id/button_container" class="android.widget.FrameLayout" bounds="[6,1239][266,1472]">
+                          <node resource-id="com.instagram.android:id/button_background_view" class="android.widget.ImageView" bounds="[31,1256][241,1466]" />
+                          <node resource-id="com.instagram.android:id/inner_button_view" class="android.widget.ImageView" bounds="[110,1335][161,1386]" />
+                         </node>
+                         <node text="Novo" resource-id="com.instagram.android:id/label" class="android.widget.TextView" bounds="[6,1472][266,1515]" />
+                        </node>
+                       </node>
+                       <node resource-id="com.instagram.android:id/outer_container" class="android.widget.LinearLayout" clickable="true" bounds="[266,1239][526,1532]">
+                        <node resource-id="com.instagram.android:id/avatar_view" class="android.widget.FrameLayout" bounds="[266,1239][526,1472]">
+                         <node class="android.widget.Button" content-desc="Story de minhaconta, 1 de 0, Visualizado." clickable="true" bounds="[266,1239][526,1472]">
+                          <node resource-id="com.instagram.android:id/avatar_container" class="android.widget.FrameLayout" bounds="[266,1239][526,1472]">
+                           <node resource-id="com.instagram.android:id/seen_state" class="android.view.View" bounds="[291,1256][501,1466]" />
+                           <node resource-id="com.instagram.android:id/avatar_image_view" class="android.widget.ImageView" content-desc="Story do destaque de minhaconta na coluna 1" bounds="[309,1274][483,1448]" />
+                          </node>
+                         </node>
+                        </node>
+                        <node resource-id="com.instagram.android:id/title_container" class="android.view.ViewGroup" bounds="[266,1472][526,1515]">
+                         <node text="Pessoa 04" resource-id="com.instagram.android:id/username" class="android.widget.TextView" bounds="[295,1472][497,1515]" />
+                        </node>
+                       </node>
+                      </node>
+                     </node>
+                    </node>
+                    <node resource-id="com.instagram.android:id/profile_tabs_container" class="android.widget.LinearLayout" bounds="[0,1560][1080,1696]">
+                     <node resource-id="com.instagram.android:id/profile_tab_layout" class="android.widget.HorizontalScrollView" bounds="[0,1560][1080,1695]">
+                      <node class="android.widget.LinearLayout" bounds="[0,1560][1080,1695]">
+                       <node class="android.widget.LinearLayout" selected="true" bounds="[0,1560][270,1695]">
+                        <node class="android.widget.FrameLayout" selected="true" bounds="[0,1560][270,1695]">
+                         <node resource-id="com.instagram.android:id/profile_tab_icon_view" class="android.widget.ImageView" content-desc="Visualização em grade" clickable="true" selected="true" bounds="[0,1560][270,1695]" />
+                        </node>
+                       </node>
+                       <node class="android.widget.LinearLayout" clickable="true" bounds="[270,1560][540,1695]">
+                        <node class="android.widget.FrameLayout" bounds="[270,1560][540,1695]">
+                         <node resource-id="com.instagram.android:id/profile_tab_icon_view" class="android.widget.ImageView" content-desc="Reels" clickable="true" bounds="[270,1560][540,1695]" />
+                        </node>
+                       </node>
+                       <node class="android.widget.LinearLayout" clickable="true" bounds="[540,1560][810,1695]">
+                        <node class="android.widget.FrameLayout" bounds="[540,1560][810,1695]">
+                         <node resource-id="com.instagram.android:id/profile_tab_icon_view" class="android.widget.ImageView" content-desc="Repostados" clickable="true" bounds="[540,1560][810,1695]" />
+                        </node>
+                       </node>
+                       <node class="android.widget.LinearLayout" clickable="true" bounds="[810,1560][1080,1695]">
+                        <node class="android.widget.FrameLayout" clickable="true" bounds="[810,1560][1080,1695]">
+                         <node resource-id="com.instagram.android:id/wrapper" class="android.view.ViewGroup" bounds="[810,1560][1080,1695]">
+                          <node resource-id="com.instagram.android:id/container" class="android.widget.FrameLayout" bounds="[911,1594][979,1662]">
+                           <node resource-id="com.instagram.android:id/profile_tab_icon_view" class="android.widget.ImageView" content-desc="Fotos com você" bounds="[911,1594][979,1662]" />
+                          </node>
+                         </node>
+                        </node>
+                       </node>
+                      </node>
+                     </node>
+                     <node resource-id="com.instagram.android:id/profile_tabs_bottom_divider" class="android.view.View" bounds="[0,1695][1080,1696]" />
+                    </node>
+                   </node>
+                  </node>
+                  <node resource-id="com.instagram.android:id/swipe_refresh_animated_progressbar_container" class="android.view.View" bounds="[441,222][638,419]" />
+                  <node resource-id="com.instagram.android:id/profile_viewpager" class="androidx.viewpager.widget.ViewPager" scrollable="true" bounds="[0,1696][1080,2138]">
+                   <node resource-id="android:id/list" class="androidx.recyclerview.widget.RecyclerView" bounds="[0,1696][1080,2138]">
+                    <node resource-id="com.instagram.android:id/gap_binder_group" class="android.view.View" bounds="[0,1696][1080,1702]" />
+                    <node resource-id="com.instagram.android:id/media_set_row_content_identifier" class="android.widget.LinearLayout" bounds="[0,1702][1080,2138]">
+                     <node class="android.widget.FrameLayout" bounds="[0,1702][356,2138]">
+                      <node class="android.widget.FrameLayout" bounds="[0,1702][356,2138]">
+                       <node resource-id="com.instagram.android:id/image_button" class="android.widget.Button" content-desc="Reel de Pessoa 01 na linha 1, coluna 1" clickable="true" long-clickable="true" bounds="[0,1702][356,2138]" />
+                      </node>
+                     </node>
+                     <node class="android.widget.FrameLayout" bounds="[362,1702][718,2138]">
+                      <node class="android.widget.FrameLayout" bounds="[362,1702][718,2138]">
+                       <node resource-id="com.instagram.android:id/image_button" class="android.widget.Button" content-desc="Reel de Pessoa 01 na linha 1, coluna 2" clickable="true" long-clickable="true" bounds="[362,1702][718,2138]" />
+                      </node>
+                     </node>
+                     <node class="android.widget.FrameLayout" bounds="[724,1702][1080,2138]">
+                      <node class="android.widget.FrameLayout" bounds="[724,1702][1080,2138]">
+                       <node resource-id="com.instagram.android:id/image_button" class="android.widget.Button" content-desc="Reel de Pessoa 01 na linha 1, coluna 3" clickable="true" long-clickable="true" bounds="[724,1702][1080,2138]" />
+                      </node>
+                     </node>
+                    </node>
+                   </node>
+                  </node>
+                  <node class="android.widget.ScrollView" bounds="[0,1696][1080,2138]" />
+                 </node>
+                 <node resource-id="com.instagram.android:id/profile_action_bar" class="android.widget.FrameLayout" bounds="[0,65][1080,223]">
+                  <node resource-id="com.instagram.android:id/action_bar_layout" class="android.widget.LinearLayout" bounds="[0,65][1057,223]">
+                   <node resource-id="com.instagram.android:id/left_action_bar_buttons" class="android.widget.LinearLayout" bounds="[0,65][136,223]">
+                    <node resource-id="com.instagram.android:id/profile_header_create_button" class="android.widget.ImageView" content-desc="Criar novo" clickable="true" bounds="[0,65][136,223]" />
+                   </node>
+                   <node resource-id="com.instagram.android:id/action_bar_username_container" class="android.widget.LinearLayout" clickable="true" bounds="[181,65][785,223]">
+                    <node class="android.view.ViewGroup" bounds="[318,65][782,223]">
+                     <node text="minhaconta" resource-id="com.instagram.android:id/action_bar_title" class="android.widget.TextView" content-desc="minhaconta" bounds="[318,65][691,223]" />
+                     <node resource-id="com.instagram.android:id/action_bar_username_buttons_container" class="android.widget.LinearLayout" bounds="[691,65][782,223]">
+                      <node resource-id="com.instagram.android:id/action_bar_title_chevron" class="android.widget.ImageView" bounds="[708,127][742,161]" />
+                      <node resource-id="com.instagram.android:id/action_bar_title_red_dot" class="android.widget.ImageView" content-desc="Notificações não lidas" bounds="[759,132][782,155]" />
+                     </node>
+                    </node>
+                   </node>
+                   <node resource-id="com.instagram.android:id/right_action_bar_buttons" class="android.widget.LinearLayout" bounds="[785,65][1057,223]">
+                    <node class="android.widget.ImageView" content-desc="Ver perfil no Threads" clickable="true" bounds="[785,65][921,223]" />
+                    <node class="android.widget.ImageView" content-desc="Opções" clickable="true" bounds="[921,65][1057,223]" />
+                   </node>
+                  </node>
+                 </node>
+                </node>
+               </node>
+              </node>
+             </node>
+            </node>
+           </node>
+           <node resource-id="com.instagram.android:id/tab_bar_shadow" class="android.view.View" bounds="[0,2137][1080,2138]" />
+           <node resource-id="com.instagram.android:id/tab_bar" class="android.widget.LinearLayout" bounds="[0,2138][1080,2273]">
+            <node resource-id="com.instagram.android:id/feed_tab" class="android.widget.FrameLayout" content-desc="Página inicial" clickable="true" long-clickable="true" bounds="[0,2138][216,2273]">
+             <node resource-id="com.instagram.android:id/tab_icon" class="android.widget.ImageView" bounds="[74,2171][142,2239]" />
+            </node>
+            <node resource-id="com.instagram.android:id/clips_tab" class="android.widget.FrameLayout" content-desc="Reels" clickable="true" long-clickable="true" bounds="[216,2138][432,2273]">
+             <node resource-id="com.instagram.android:id/tab_icon" class="android.widget.ImageView" bounds="[290,2171][358,2239]" />
+            </node>
+            <node resource-id="com.instagram.android:id/direct_tab" class="android.widget.FrameLayout" content-desc="Mensagem" clickable="true" long-clickable="true" bounds="[432,2138][648,2273]">
+             <node resource-id="com.instagram.android:id/tab_icon" class="android.widget.ImageView" bounds="[506,2171][574,2239]" />
+             <node text="5" resource-id="com.instagram.android:id/notification" class="android.widget.TextView" bounds="[559,2212][587,2240]" />
+            </node>
+            <node resource-id="com.instagram.android:id/search_tab" class="android.widget.FrameLayout" content-desc="Pesquisar e explorar" clickable="true" long-clickable="true" bounds="[648,2138][864,2273]">
+             <node resource-id="com.instagram.android:id/tab_icon" class="android.widget.ImageView" bounds="[722,2171][790,2239]" />
+            </node>
+            <node resource-id="com.instagram.android:id/profile_tab" class="android.widget.FrameLayout" content-desc="Perfil" clickable="true" long-clickable="true" selected="true" bounds="[864,2138][1080,2273]">
+             <node resource-id="com.instagram.android:id/wrapper" class="android.view.ViewGroup" selected="true" bounds="[864,2138][1080,2273]">
+              <node resource-id="com.instagram.android:id/container" class="android.widget.FrameLayout" selected="true" bounds="[930,2164][1014,2248]">
+               <node resource-id="com.instagram.android:id/tab_avatar" class="android.widget.ImageView" selected="true" bounds="[930,2164][1014,2248]" />
+              </node>
+             </node>
+            </node>
+           </node>
+          </node>
+         </node>
+        </node>
+        <node resource-id="com.instagram.android:id/bottom_sheet_camera_container" class="android.widget.FrameLayout" bounds="[0,64][1080,2273]" />
+       </node>
+       <node resource-id="com.instagram.android:id/modal_container" class="android.widget.FrameLayout" bounds="[0,0][1080,2273]" />
+       <node resource-id="com.instagram.android:id/overlay_layout_container" class="android.widget.FrameLayout" bounds="[0,0][1080,2273]" />
+      </node>
+      <node class="android.view.View" bounds="[0,0][1080,65]" />
+     </node>
+    </node>
+   </node>
+  </node>
+ </node>
+</hierarchy>

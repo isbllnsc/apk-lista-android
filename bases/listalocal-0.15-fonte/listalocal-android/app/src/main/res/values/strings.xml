@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Lista Local</string>
+    <string name="accessibility_description">Ajuda a criar listas de transmissão no WhatsApp e WhatsApp Business. Ao iniciar a operação, lê controles visíveis desses apps e toca neles para selecionar contatos. Não escreve nem envia mensagens. Você pode desligar o serviço em Configurações, Acessibilidade.</string>
+</resources>

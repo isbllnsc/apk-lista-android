@@ -1,0 +1,22 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+/build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.keystore
+# dados sensiveis nunca versionados
+cases.local.json
+
+*.jks
+listalocal-release.jks
+*.p12
+*.pfx
+keystore.properties
+signing.properties
+.env
+.env.*

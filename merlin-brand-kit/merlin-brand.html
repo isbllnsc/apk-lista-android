@@ -1,0 +1,393 @@
+<title>Merlin Automation Wizard — Brand Guide</title>
+<style>
+  :root{
+    --void:#0b0619;
+    --night:#130b2b;
+    --panel:#1b1140;
+    --panel-2:#241755;
+    --violet:#8b5cf6;
+    --violet-bright:#a78bfa;
+    --indigo:#5b3fa8;
+    --cyan:#28e0e8;
+    --gold:#f6b93b;
+    --mist:#eae6f7;
+    --muted:#9a93bf;
+    --line:rgba(139,92,246,.22);
+    --edge:rgba(40,224,232,.28);
+    --display:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"Cascadia Code","Consolas",monospace;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0}
+  .page{
+    background:
+      radial-gradient(1100px 700px at 78% -8%, rgba(139,92,246,.20), transparent 60%),
+      radial-gradient(900px 620px at 10% 12%, rgba(40,224,232,.12), transparent 55%),
+      radial-gradient(700px 700px at 50% 108%, rgba(246,185,59,.09), transparent 60%),
+      linear-gradient(180deg,var(--night),var(--void));
+    color:var(--mist);
+    font-family:var(--display);
+    line-height:1.6;
+    overflow-x:hidden;
+    position:relative;
+  }
+  .stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.5;
+    box-shadow:0 0 6px 1px rgba(255,255,255,.5);animation:tw 4s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:.85;transform:scale(1)}}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+  .eyebrow{
+    font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--cyan);display:inline-flex;gap:10px;align-items:center;margin:0 0 18px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan))}
+
+  /* ---- HERO ---- */
+  .hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:80px 0 60px;gap:26px}
+  .hero .mark{width:118px;height:118px;filter:drop-shadow(0 14px 40px rgba(139,92,246,.45))}
+  .wordmark{width:min(560px,86vw);height:auto;display:block}
+  .tagline{
+    font-family:var(--mono);font-size:clamp(12px,2.4vw,15px);letter-spacing:.42em;
+    text-transform:uppercase;color:var(--violet-bright);margin:0;padding-left:.42em}
+  .kicker{max-width:560px;color:var(--muted);font-size:17px;margin:8px auto 0}
+  .scrolls{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+  .chip{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--mist);border:1px solid var(--line);border-radius:999px;padding:8px 16px;
+    background:rgba(27,17,64,.5)}
+
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .h2{font-size:clamp(28px,4.4vw,40px);margin:0 0 6px;font-weight:800;letter-spacing:-.01em;
+    text-wrap:balance;background:linear-gradient(90deg,var(--mist),var(--violet-bright));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--muted);max-width:62ch;margin:0 0 40px;font-size:17px}
+
+  /* ---- MASCOT (retro terminal + pixel sprite) ---- */
+  .mascot-grid{display:grid;grid-template-columns:minmax(300px,1fr) 1fr;gap:44px;align-items:center}
+  .mascot-stage{
+    position:relative;border:1px solid var(--line);border-radius:28px;padding:26px;
+    background:
+      radial-gradient(120% 120% at 60% 15%,rgba(40,224,232,.10),transparent 55%),
+      linear-gradient(180deg,#0e0824,#070414);
+    display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .mascot-stage::before{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(40,224,232,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(40,224,232,.05) 1px,transparent 1px);
+    background-size:22px 22px;mask-image:radial-gradient(80% 80% at 50% 45%,#000,transparent 80%)}
+
+  .term{position:relative;z-index:2;width:100%;max-width:340px;border-radius:10px;overflow:hidden;
+    background:#0a0518;border:2px solid rgba(40,224,232,.35);
+    box-shadow:0 0 0 3px #0a0518,0 16px 44px rgba(40,224,232,.16);font-family:var(--mono)}
+  .float{animation:float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  .term-bar{display:flex;align-items:center;gap:7px;padding:9px 12px;background:#170e33;
+    border-bottom:1px solid rgba(40,224,232,.22)}
+  .term-bar i{width:11px;height:11px;border-radius:50%;display:block}
+  .term-bar .fn{margin-left:8px;font-size:11px;color:var(--muted);letter-spacing:.06em}
+  .term-body{position:relative;padding:22px 14px;display:flex;justify-content:center;
+    background:
+      repeating-linear-gradient(0deg,rgba(40,224,232,.05) 0 1px,transparent 1px 4px),
+      radial-gradient(120% 90% at 50% 0,rgba(139,92,246,.14),transparent 70%),#0a0518}
+  .merl-canvas{width:236px;height:auto;image-rendering:pixelated;image-rendering:crisp-edges;
+    filter:drop-shadow(0 6px 16px rgba(40,224,232,.28))}
+  .term-foot{padding:11px 14px;border-top:1px solid rgba(40,224,232,.2);font-size:12.5px;
+    color:#6ef0a0;letter-spacing:.04em;background:#0a0518}
+  .term-foot .cur{display:inline-block;width:7px;height:13px;background:#6ef0a0;margin-left:3px;
+    vertical-align:-2px}
+
+  .traits{list-style:none;padding:0;margin:0;display:grid;gap:18px}
+  .traits li{display:flex;gap:14px;align-items:flex-start}
+  .traits b{display:block;color:var(--mist);font-size:16px}
+  .traits span{color:var(--muted);font-size:14.5px}
+  .dot{flex:0 0 auto;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;
+    font-family:var(--mono);font-size:13px;font-weight:700;color:var(--cyan);
+    background:rgba(40,224,232,.10);border:1px solid var(--edge)}
+
+  /* ---- LOGO SYSTEM ---- */
+  .logos{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+  .card{border:1px solid var(--line);border-radius:20px;background:rgba(27,17,64,.42);
+    padding:26px;display:flex;flex-direction:column;gap:16px}
+  .card .frame{border-radius:14px;display:grid;place-items:center;padding:34px 20px;min-height:150px}
+  .frame.dark{background:radial-gradient(120% 140% at 30% 10%,#241755,#0c0720)}
+  .frame.light{background:linear-gradient(180deg,#f3f1fb,#e4dff5)}
+  .frame.violet{background:linear-gradient(135deg,#7c3aed,#4c2a85)}
+  .card .cap{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .icons-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .icons-row .frame{padding:22px;min-height:auto}
+  .misuse{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+  .rule{display:flex;gap:10px;align-items:center;font-size:14px;border:1px solid var(--line);
+    border-radius:12px;padding:12px 14px;background:rgba(11,6,25,.4)}
+  .rule .tick{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;font-size:12px;font-weight:700;flex:0 0 auto}
+  .yes .tick{background:rgba(40,224,232,.18);color:var(--cyan)}
+  .no .tick{background:rgba(246,89,89,.16);color:#ff8a8a}
+
+  /* ---- PALETTE ---- */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+  .sw{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(11,6,25,.4)}
+  .sw .chipc{height:96px}
+  .sw .meta{padding:14px 15px}
+  .sw .name{font-size:14px;font-weight:700;color:var(--mist)}
+  .sw .role{font-size:12px;color:var(--muted);margin-top:2px}
+  .sw .hex{font-family:var(--mono);font-size:12px;color:var(--violet-bright);margin-top:10px;letter-spacing:.04em}
+  .ratio{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px}
+  .grad{flex:1;min-width:240px;height:64px;border-radius:14px;border:1px solid var(--line)}
+  .g1{background:linear-gradient(90deg,#28e0e8,#8b5cf6)}
+  .g2{background:linear-gradient(90deg,#8b5cf6,#4c2a85,#0b0619)}
+  .g3{background:linear-gradient(90deg,#f6b93b,#8b5cf6)}
+
+  /* ---- TYPE ---- */
+  .type-block{border:1px solid var(--line);border-radius:20px;background:rgba(27,17,64,.42);padding:28px;margin-bottom:18px}
+  .type-block .role-lbl{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+  .spec-display{font-size:clamp(34px,7vw,64px);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0;
+    background:linear-gradient(90deg,var(--mist),var(--violet-bright));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .spec-sub{font-size:13px;color:var(--muted);margin-top:14px;font-family:var(--mono);letter-spacing:.05em}
+  .spec-body{font-size:18px;color:var(--mist);margin:0;max-width:62ch}
+  .spec-mono{font-family:var(--mono);font-size:15px;color:var(--cyan);margin:0}
+  .scale{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-top:8px}
+  .scale span{font-weight:800;color:var(--mist);line-height:1}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 64px;text-align:center;color:var(--muted);font-size:13px}
+  footer .mono{font-family:var(--mono);letter-spacing:.1em}
+
+  @media (max-width:760px){
+    .mascot-grid,.logos{grid-template-columns:1fr}
+    .misuse{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .stars i,.float,.term-foot .cur{animation:none}
+  }
+</style>
+
+<div class="page">
+  <div class="stars" id="stars"></div>
+
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><g id="pixelhat" shape-rendering="crispEdges"><rect x="23" y="0" width="1" height="1" fill="#120826"/><rect x="21" y="1" width="1" height="1" fill="#120826"/><rect x="22" y="1" width="1" height="1" fill="#5b3fa8"/><rect x="23" y="1" width="2" height="1" fill="#120826"/><rect x="20" y="2" width="1" height="1" fill="#120826"/><rect x="21" y="2" width="1" height="1" fill="#5b3fa8"/><rect x="22" y="2" width="1" height="1" fill="#120826"/><rect x="23" y="2" width="2" height="1" fill="#5b3fa8"/><rect x="25" y="2" width="1" height="1" fill="#120826"/><rect x="18" y="3" width="1" height="1" fill="#120826"/><rect x="19" y="3" width="1" height="1" fill="#9a6bff"/><rect x="20" y="3" width="1" height="1" fill="#5b3fa8"/><rect x="21" y="3" width="1" height="1" fill="#3f2a72"/><rect x="22" y="3" width="1" height="1" fill="#120826"/><rect x="23" y="3" width="1" height="1" fill="#9a6bff"/><rect x="24" y="3" width="2" height="1" fill="#5b3fa8"/><rect x="26" y="3" width="1" height="1" fill="#120826"/><rect x="17" y="4" width="1" height="1" fill="#120826"/><rect x="18" y="4" width="1" height="1" fill="#9a6bff"/><rect x="19" y="4" width="1" height="1" fill="#5b3fa8"/><rect x="20" y="4" width="1" height="1" fill="#3f2a72"/><rect x="21" y="4" width="4" height="1" fill="#120826"/><rect x="25" y="4" width="1" height="1" fill="#3f2a72"/><rect x="26" y="4" width="1" height="1" fill="#120826"/><rect x="16" y="5" width="1" height="1" fill="#120826"/><rect x="17" y="5" width="2" height="1" fill="#9a6bff"/><rect x="19" y="5" width="2" height="1" fill="#5b3fa8"/><rect x="21" y="5" width="1" height="1" fill="#3f2a72"/><rect x="22" y="5" width="1" height="1" fill="#120826"/><rect x="25" y="5" width="1" height="1" fill="#120826"/><rect x="15" y="6" width="1" height="1" fill="#120826"/><rect x="16" y="6" width="2" height="1" fill="#9a6bff"/><rect x="18" y="6" width="2" height="1" fill="#5b3fa8"/><rect x="20" y="6" width="1" height="1" fill="#3f2a72"/><rect x="21" y="6" width="1" height="1" fill="#120826"/><rect x="13" y="7" width="1" height="1" fill="#120826"/><rect x="14" y="7" width="3" height="1" fill="#9a6bff"/><rect x="17" y="7" width="2" height="1" fill="#5b3fa8"/><rect x="19" y="7" width="2" height="1" fill="#3f2a72"/><rect x="21" y="7" width="1" height="1" fill="#120826"/><rect x="13" y="8" width="1" height="1" fill="#120826"/><rect x="14" y="8" width="3" height="1" fill="#9a6bff"/><rect x="17" y="8" width="2" height="1" fill="#5b3fa8"/><rect x="19" y="8" width="2" height="1" fill="#3f2a72"/><rect x="21" y="8" width="1" height="1" fill="#120826"/><rect x="12" y="9" width="1" height="1" fill="#120826"/><rect x="13" y="9" width="3" height="1" fill="#9a6bff"/><rect x="16" y="9" width="2" height="1" fill="#5b3fa8"/><rect x="18" y="9" width="2" height="1" fill="#3f2a72"/><rect x="20" y="9" width="1" height="1" fill="#120826"/><rect x="11" y="10" width="1" height="1" fill="#120826"/><rect x="12" y="10" width="3" height="1" fill="#9a6bff"/><rect x="15" y="10" width="4" height="1" fill="#5b3fa8"/><rect x="19" y="10" width="1" height="1" fill="#3f2a72"/><rect x="20" y="10" width="1" height="1" fill="#f4f0ff"/><rect x="21" y="10" width="1" height="1" fill="#120826"/><rect x="10" y="11" width="1" height="1" fill="#120826"/><rect x="11" y="11" width="3" height="1" fill="#9a6bff"/><rect x="14" y="11" width="4" height="1" fill="#5b3fa8"/><rect x="18" y="11" width="2" height="1" fill="#3f2a72"/><rect x="20" y="11" width="1" height="1" fill="#120826"/><rect x="9" y="12" width="1" height="1" fill="#120826"/><rect x="10" y="12" width="4" height="1" fill="#9a6bff"/><rect x="14" y="12" width="4" height="1" fill="#5b3fa8"/><rect x="18" y="12" width="3" height="1" fill="#3f2a72"/><rect x="21" y="12" width="1" height="1" fill="#120826"/><rect x="9" y="13" width="1" height="1" fill="#120826"/><rect x="10" y="13" width="4" height="1" fill="#9a6bff"/><rect x="14" y="13" width="4" height="1" fill="#5b3fa8"/><rect x="18" y="13" width="3" height="1" fill="#3f2a72"/><rect x="21" y="13" width="1" height="1" fill="#120826"/><rect x="8" y="14" width="1" height="1" fill="#120826"/><rect x="9" y="14" width="1" height="1" fill="#28e0e8"/><rect x="10" y="14" width="4" height="1" fill="#9a6bff"/><rect x="14" y="14" width="5" height="1" fill="#5b3fa8"/><rect x="19" y="14" width="3" height="1" fill="#3f2a72"/><rect x="22" y="14" width="1" height="1" fill="#120826"/><rect x="8" y="15" width="1" height="1" fill="#120826"/><rect x="9" y="15" width="5" height="1" fill="#9a6bff"/><rect x="14" y="15" width="5" height="1" fill="#5b3fa8"/><rect x="19" y="15" width="3" height="1" fill="#3f2a72"/><rect x="22" y="15" width="1" height="1" fill="#120826"/><rect x="8" y="16" width="1" height="1" fill="#120826"/><rect x="9" y="16" width="5" height="1" fill="#9a6bff"/><rect x="14" y="16" width="5" height="1" fill="#5b3fa8"/><rect x="19" y="16" width="3" height="1" fill="#3f2a72"/><rect x="22" y="16" width="1" height="1" fill="#120826"/><rect x="7" y="17" width="1" height="1" fill="#120826"/><rect x="8" y="17" width="6" height="1" fill="#9a6bff"/><rect x="14" y="17" width="5" height="1" fill="#5b3fa8"/><rect x="19" y="17" width="4" height="1" fill="#3f2a72"/><rect x="23" y="17" width="1" height="1" fill="#120826"/><rect x="7" y="18" width="1" height="1" fill="#120826"/><rect x="8" y="18" width="6" height="1" fill="#9a6bff"/><rect x="14" y="18" width="5" height="1" fill="#5b3fa8"/><rect x="19" y="18" width="1" height="1" fill="#28e0e8"/><rect x="20" y="18" width="3" height="1" fill="#3f2a72"/><rect x="23" y="18" width="1" height="1" fill="#120826"/><rect x="6" y="19" width="1" height="1" fill="#120826"/><rect x="7" y="19" width="1" height="1" fill="#9a6bff"/><rect x="8" y="19" width="1" height="1" fill="#f4f0ff"/><rect x="9" y="19" width="5" height="1" fill="#9a6bff"/><rect x="14" y="19" width="5" height="1" fill="#5b3fa8"/><rect x="19" y="19" width="5" height="1" fill="#3f2a72"/><rect x="24" y="19" width="1" height="1" fill="#120826"/><rect x="6" y="20" width="1" height="1" fill="#120826"/><rect x="7" y="20" width="7" height="1" fill="#9a6bff"/><rect x="14" y="20" width="5" height="1" fill="#5b3fa8"/><rect x="19" y="20" width="5" height="1" fill="#3f2a72"/><rect x="24" y="20" width="1" height="1" fill="#120826"/><rect x="5" y="21" width="1" height="1" fill="#120826"/><rect x="6" y="21" width="19" height="1" fill="#ffcf4a"/><rect x="25" y="21" width="1" height="1" fill="#120826"/><rect x="5" y="22" width="1" height="1" fill="#120826"/><rect x="6" y="22" width="19" height="1" fill="#ffcf4a"/><rect x="25" y="22" width="1" height="1" fill="#120826"/><rect x="5" y="23" width="1" height="1" fill="#120826"/><rect x="6" y="23" width="19" height="1" fill="#d99a2c"/><rect x="25" y="23" width="1" height="1" fill="#120826"/><rect x="4" y="24" width="1" height="1" fill="#120826"/><rect x="5" y="24" width="8" height="1" fill="#9a6bff"/><rect x="13" y="24" width="7" height="1" fill="#5b3fa8"/><rect x="20" y="24" width="6" height="1" fill="#3f2a72"/><rect x="26" y="24" width="1" height="1" fill="#120826"/><rect x="4" y="25" width="1" height="1" fill="#120826"/><rect x="5" y="25" width="8" height="1" fill="#9a6bff"/><rect x="13" y="25" width="7" height="1" fill="#5b3fa8"/><rect x="20" y="25" width="6" height="1" fill="#3f2a72"/><rect x="26" y="25" width="1" height="1" fill="#120826"/><rect x="3" y="26" width="1" height="1" fill="#120826"/><rect x="4" y="26" width="9" height="1" fill="#9a6bff"/><rect x="13" y="26" width="8" height="1" fill="#5b3fa8"/><rect x="21" y="26" width="6" height="1" fill="#3f2a72"/><rect x="27" y="26" width="1" height="1" fill="#120826"/><rect x="3" y="27" width="1" height="1" fill="#120826"/><rect x="4" y="27" width="9" height="1" fill="#9a6bff"/><rect x="13" y="27" width="8" height="1" fill="#5b3fa8"/><rect x="21" y="27" width="6" height="1" fill="#3f2a72"/><rect x="27" y="27" width="1" height="1" fill="#120826"/><rect x="2" y="28" width="1" height="1" fill="#120826"/><rect x="3" y="28" width="10" height="1" fill="#9a6bff"/><rect x="13" y="28" width="8" height="1" fill="#5b3fa8"/><rect x="21" y="28" width="7" height="1" fill="#3f2a72"/><rect x="28" y="28" width="1" height="1" fill="#120826"/><rect x="0" y="29" width="1" height="1" fill="#120826"/><rect x="1" y="29" width="29" height="1" fill="#5b3fa8"/><rect x="30" y="29" width="1" height="1" fill="#120826"/><rect x="0" y="30" width="1" height="1" fill="#120826"/><rect x="1" y="30" width="29" height="1" fill="#5b3fa8"/><rect x="30" y="30" width="1" height="1" fill="#120826"/><rect x="0" y="31" width="1" height="1" fill="#120826"/><rect x="1" y="31" width="29" height="1" fill="#3f2a72"/><rect x="30" y="31" width="1" height="1" fill="#120826"/><rect x="0" y="32" width="31" height="1" fill="#120826"/></g><g id="pixelmerlin" shape-rendering="crispEdges"><rect x="0" y="0" width="1" height="1" fill="#eae6f7"/><rect x="4" y="0" width="1" height="1" fill="#ddd4f8"/><rect x="6" y="0" width="1" height="1" fill="#d6cbf8"/><rect x="7" y="0" width="1" height="1" fill="#d3c7f8"/><rect x="8" y="0" width="1" height="1" fill="#d0c2f8"/><rect x="9" y="0" width="1" height="1" fill="#ccbef8"/><rect x="10" y="0" width="1" height="1" fill="#c9b9f8"/><rect x="12" y="0" width="1" height="1" fill="#c3b0f9"/><rect x="13" y="0" width="1" height="1" fill="#bfacf9"/><rect x="14" y="0" width="1" height="1" fill="#bca8f9"/><rect x="15" y="0" width="1" height="1" fill="#b9a3f9"/><rect x="18" y="0" width="1" height="1" fill="#af96fa"/><rect x="24" y="0" width="1" height="1" fill="#85a2f5"/><rect x="25" y="0" width="1" height="1" fill="#7ca8f4"/><rect x="26" y="0" width="1" height="1" fill="#73aef3"/><rect x="27" y="0" width="1" height="1" fill="#69b4f1"/><rect x="28" y="0" width="1" height="1" fill="#60bbf0"/><rect x="30" y="0" width="1" height="1" fill="#4dc7ed"/><rect x="34" y="0" width="1" height="1" fill="#28e0e8"/><rect x="0" y="1" width="1" height="1" fill="#eae6f7"/><rect x="1" y="1" width="1" height="1" fill="#e7e2f7"/><rect x="3" y="1" width="1" height="1" fill="#e0d9f7"/><rect x="4" y="1" width="1" height="1" fill="#ddd4f8"/><rect x="6" y="1" width="1" height="1" fill="#d6cbf8"/><rect x="12" y="1" width="1" height="1" fill="#c3b0f9"/><rect x="16" y="1" width="1" height="1" fill="#b59ff9"/><rect x="18" y="1" width="1" height="1" fill="#af96fa"/><rect x="26" y="1" width="1" height="1" fill="#73aef3"/><rect x="30" y="1" width="1" height="1" fill="#4dc7ed"/><rect x="31" y="1" width="1" height="1" fill="#44cdec"/><rect x="34" y="1" width="1" height="1" fill="#28e0e8"/><rect x="0" y="2" width="1" height="1" fill="#eae6f7"/><rect x="2" y="2" width="1" height="1" fill="#e3ddf7"/><rect x="4" y="2" width="1" height="1" fill="#ddd4f8"/><rect x="6" y="2" width="1" height="1" fill="#d6cbf8"/><rect x="12" y="2" width="1" height="1" fill="#c3b0f9"/><rect x="16" y="2" width="1" height="1" fill="#b59ff9"/><rect x="18" y="2" width="1" height="1" fill="#af96fa"/><rect x="26" y="2" width="1" height="1" fill="#73aef3"/><rect x="30" y="2" width="1" height="1" fill="#4dc7ed"/><rect x="32" y="2" width="1" height="1" fill="#3bd4eb"/><rect x="34" y="2" width="1" height="1" fill="#28e0e8"/><rect x="0" y="3" width="1" height="1" fill="#eae6f7"/><rect x="2" y="3" width="1" height="1" fill="#e3ddf7"/><rect x="4" y="3" width="1" height="1" fill="#ddd4f8"/><rect x="6" y="3" width="1" height="1" fill="#d6cbf8"/><rect x="7" y="3" width="1" height="1" fill="#d3c7f8"/><rect x="8" y="3" width="1" height="1" fill="#d0c2f8"/><rect x="9" y="3" width="1" height="1" fill="#ccbef8"/><rect x="12" y="3" width="1" height="1" fill="#c3b0f9"/><rect x="13" y="3" width="1" height="1" fill="#bfacf9"/><rect x="14" y="3" width="1" height="1" fill="#bca8f9"/><rect x="15" y="3" width="1" height="1" fill="#b9a3f9"/><rect x="18" y="3" width="1" height="1" fill="#af96fa"/><rect x="26" y="3" width="1" height="1" fill="#73aef3"/><rect x="30" y="3" width="1" height="1" fill="#4dc7ed"/><rect x="32" y="3" width="1" height="1" fill="#3bd4eb"/><rect x="34" y="3" width="1" height="1" fill="#28e0e8"/><rect x="0" y="4" width="1" height="1" fill="#eae6f7"/><rect x="4" y="4" width="1" height="1" fill="#ddd4f8"/><rect x="6" y="4" width="1" height="1" fill="#d6cbf8"/><rect x="12" y="4" width="1" height="1" fill="#c3b0f9"/><rect x="14" y="4" width="1" height="1" fill="#bca8f9"/><rect x="18" y="4" width="1" height="1" fill="#af96fa"/><rect x="26" y="4" width="1" height="1" fill="#73aef3"/><rect x="30" y="4" width="1" height="1" fill="#4dc7ed"/><rect x="33" y="4" width="1" height="1" fill="#31dae9"/><rect x="34" y="4" width="1" height="1" fill="#28e0e8"/><rect x="0" y="5" width="1" height="1" fill="#eae6f7"/><rect x="4" y="5" width="1" height="1" fill="#ddd4f8"/><rect x="6" y="5" width="1" height="1" fill="#d6cbf8"/><rect x="12" y="5" width="1" height="1" fill="#c3b0f9"/><rect x="15" y="5" width="1" height="1" fill="#b9a3f9"/><rect x="18" y="5" width="1" height="1" fill="#af96fa"/><rect x="26" y="5" width="1" height="1" fill="#73aef3"/><rect x="30" y="5" width="1" height="1" fill="#4dc7ed"/><rect x="34" y="5" width="1" height="1" fill="#28e0e8"/><rect x="0" y="6" width="1" height="1" fill="#eae6f7"/><rect x="4" y="6" width="1" height="1" fill="#ddd4f8"/><rect x="6" y="6" width="1" height="1" fill="#d6cbf8"/><rect x="7" y="6" width="1" height="1" fill="#d3c7f8"/><rect x="8" y="6" width="1" height="1" fill="#d0c2f8"/><rect x="9" y="6" width="1" height="1" fill="#ccbef8"/><rect x="10" y="6" width="1" height="1" fill="#c9b9f8"/><rect x="12" y="6" width="1" height="1" fill="#c3b0f9"/><rect x="16" y="6" width="1" height="1" fill="#b59ff9"/><rect x="18" y="6" width="1" height="1" fill="#af96fa"/><rect x="19" y="6" width="1" height="1" fill="#ac91fa"/><rect x="20" y="6" width="1" height="1" fill="#a88dfa"/><rect x="21" y="6" width="1" height="1" fill="#a18ff9"/><rect x="22" y="6" width="1" height="1" fill="#9895f8"/><rect x="24" y="6" width="1" height="1" fill="#85a2f5"/><rect x="25" y="6" width="1" height="1" fill="#7ca8f4"/><rect x="26" y="6" width="1" height="1" fill="#73aef3"/><rect x="27" y="6" width="1" height="1" fill="#69b4f1"/><rect x="28" y="6" width="1" height="1" fill="#60bbf0"/><rect x="30" y="6" width="1" height="1" fill="#4dc7ed"/><rect x="34" y="6" width="1" height="1" fill="#28e0e8"/></g></defs></svg>
+
+  <!-- ============ HERO ============ -->
+  <header class="wrap hero">
+    <svg class="mark float" viewBox="0 0 31 33" role="img" aria-label="Merlin — chapéu de mago em pixel art">
+      <defs>
+        <linearGradient id="wm" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#eae6f7"/><stop offset=".6" stop-color="#a78bfa"/><stop offset="1" stop-color="#28e0e8"/></linearGradient>
+      </defs>
+      <use href="#pixelhat"/>
+    </svg>
+
+    <svg class="wordmark" viewBox="0 0 35 7" role="img" aria-label="Merlin">
+      <use href="#pixelmerlin"/>
+    </svg>
+    <p class="tagline">Automation Wizard</p>
+    <p class="kicker">Mensagens, interações e alcance nas redes sociais — num passe de mágica.</p>
+    <div class="scrolls">
+      <span class="chip">Logotipo</span><span class="chip">Mascote</span>
+      <span class="chip">Tipografia</span><span class="chip">Paleta</span>
+    </div>
+  </header>
+
+  <!-- ============ MASCOT ============ -->
+  <section class="wrap">
+    <p class="eyebrow">O Mascote</p>
+    <h2 class="h2">Merl, o Autômato Analista</h2>
+    <p class="lead">Metade máquina, metade arquimago — renderizado como um sprite de 32 bits, direto do terminal. O Merl cruza milhões de sinais das redes em tempo real e exibe o resultado na própria tela do peito: dados, tendências, o próximo movimento. Estética retrô, cabeça de programador.</p>
+    <div class="mascot-grid">
+      <div class="mascot-stage">
+        <div class="term">
+          <div class="term-bar">
+            <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+            <span class="fn">merl.sprite — 32-bit</span>
+          </div>
+          <div class="term-body">
+            <canvas id="merl" width="56" height="70" class="merl-canvas" role="img" aria-label="Merl, sprite pixel-art de um robô com chapéu de mago"></canvas>
+          </div>
+          <div class="term-foot">&gt; summon("Merl")<span class="cur"></span></div>
+        </div>
+      </div>
+      <ul class="traits">
+        <li><span class="dot">&lt;/&gt;</span><div><b>Núcleo de processamento</b><span>Cruza milhões de sinais de todas as redes em tempo real. Nada passa despercebido pelo visor.</span></div></li>
+        <li><span class="dot">&#8599;</span><div><b>Projeção de dados</b><span>Exibe métricas na tela do peito: alcance, engajamento e tendências antes de virarem óbvias.</span></div></li>
+        <li><span class="dot">&#9889;</span><div><b>Decisão em tempo real</b><span>Recomenda o próximo post, horário e formato com base em dados — não em achismo.</span></div></li>
+        <li><span class="dot">{ }</span><div><b>Precisão de autômato</b><span>Sem cansaço, sem viés, sem esquecer um horário nobre. Frio, exato e implacável.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ LOGO SYSTEM ============ -->
+  <section class="wrap">
+    <p class="eyebrow">O Logotipo</p>
+    <h2 class="h2">Sistema de Marca</h2>
+    <p class="lead">A marca é o próprio chapéu do Merl em pixel art — sem moldura, sem ícone-quadrado. Só o chapéu, legível de 16&nbsp;px (favicon) a outdoor, sempre com os pixels nítidos. Reserve um espaço livre igual à altura da aba ao redor da marca.</p>
+
+    <div class="logos">
+      <div class="card">
+        <span class="cap">Lockup principal — fundo escuro</span>
+        <div class="frame dark">
+          <svg viewBox="0 0 320 120" style="width:100%;max-width:280px">
+            <g transform="translate(0,18)">
+              <use href="#pixelmerlin" transform="translate(80,30) scale(4.9)"/>
+              <text x="82" y="82" fill="#28e0e8" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="3">AUTOMATION WIZARD</text>
+            </g>
+            <use href="#pixelhat" transform="translate(6,27) scale(1.9)"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="cap">Versão vertical — fundo escuro</span>
+        <div class="frame dark">
+          <svg viewBox="0 0 160 150" style="width:120px">
+            <use href="#pixelhat" transform="translate(57,6) scale(1.5)"/>
+            <use href="#pixelmerlin" transform="translate(40,66) scale(2.3)"/>
+            <text x="80" y="96" text-anchor="middle" fill="#28e0e8" font-family="'JetBrains Mono',monospace" font-size="8" letter-spacing="2">AUTOMATION WIZARD</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px" class="card">
+      <span class="cap">O chapéu como marca — favicon e tamanhos reduzidos</span>
+      <div class="icons-row">
+        <div class="frame dark"><svg viewBox="0 0 31 33" style="width:58px"><use href="#pixelhat"/></svg></div>
+        <div class="frame light"><svg viewBox="0 0 31 33" style="width:58px"><use href="#pixelhat"/></svg></div>
+        <div class="frame dark"><svg viewBox="0 0 31 33" style="width:32px"><use href="#pixelhat"/></svg></div>
+      </div>
+    </div>
+
+    <div class="misuse">
+      <div class="rule yes"><span class="tick">&#10003;</span>Use o violeta sobre fundos escuros ou neutros</div>
+      <div class="rule yes"><span class="tick">&#10003;</span>Mantenha o espaço livre e a faísca dourada</div>
+      <div class="rule no"><span class="tick">&#10007;</span>Não distorça, gire nem suavize os pixels — mantenha-os nítidos</div>
+      <div class="rule no"><span class="tick">&#10007;</span>Não aplique o lockup colorido sobre fundos saturados</div>
+    </div>
+  </section>
+
+  <!-- ============ PALETTE ============ -->
+  <section class="wrap">
+    <p class="eyebrow">A Paleta</p>
+    <h2 class="h2">Cores do Grimório</h2>
+    <p class="lead">Roxos arcanos como base mística, ciano de circuito para o lado robô e ouro encantado para as faíscas de destaque. Neutros com leve viés violeta — nunca cinza puro.</p>
+    <div class="swatches">
+      <div class="sw"><div class="chipc" style="background:#8b5cf6"></div><div class="meta"><div class="name">Violeta Elétrico</div><div class="role">Primária · marca, CTAs</div><div class="hex">#8B5CF6</div></div></div>
+      <div class="sw"><div class="chipc" style="background:#4c2a85"></div><div class="meta"><div class="name">Índigo Arcano</div><div class="role">Profundidade · gradientes</div><div class="hex">#4C2A85</div></div></div>
+      <div class="sw"><div class="chipc" style="background:#28e0e8"></div><div class="meta"><div class="name">Ciano de Circuito</div><div class="role">Acento tech · dados, links</div><div class="hex">#28E0E8</div></div></div>
+      <div class="sw"><div class="chipc" style="background:#f6b93b"></div><div class="meta"><div class="name">Ouro Encantado</div><div class="role">Faísca · destaques mágicos</div><div class="hex">#F6B93B</div></div></div>
+      <div class="sw"><div class="chipc" style="background:#130b2b"></div><div class="meta"><div class="name">Noite Arcana</div><div class="role">Fundo principal</div><div class="hex">#130B2B</div></div></div>
+      <div class="sw"><div class="chipc" style="background:#eae6f7"></div><div class="meta"><div class="name">Névoa</div><div class="role">Texto sobre escuro</div><div class="hex">#EAE6F7</div></div></div>
+    </div>
+    <div class="ratio">
+      <div class="grad g1"></div><div class="grad g2"></div><div class="grad g3"></div>
+    </div>
+  </section>
+
+  <!-- ============ TYPOGRAPHY ============ -->
+  <section class="wrap">
+    <p class="eyebrow">A Tipografia</p>
+    <h2 class="h2">Vozes da Marca</h2>
+    <p class="lead">Um par que traduz a fusão: um display geométrico e confiante (o robô) equilibrado por uma mono técnica para dados e etiquetas (o digital). Fontes sugeridas abaixo — os espécimes usam fallback do sistema.</p>
+
+    <div class="type-block">
+      <div class="role-lbl">Display · Títulos e wordmark</div>
+      <p class="spec-display">Clash Display</p>
+      <p class="spec-sub">Peso 600–800 · tracking negativo em títulos · geométrico com personalidade — o lado "robô confiante"</p>
+    </div>
+    <div class="type-block">
+      <div class="role-lbl">Corpo · Texto e interface</div>
+      <p class="spec-body">Satoshi mantém a leitura clara e humana nas telas do produto — legendas de posts, relatórios e ajuda. Neutra o bastante para não competir com o display, calorosa o bastante para parecer amigável.</p>
+      <p class="spec-sub">Regular 400 · Medium 500 · ~65 caracteres por linha</p>
+    </div>
+    <div class="type-block">
+      <div class="role-lbl">Mono · Dados, etiquetas e código</div>
+      <p class="spec-mono">JetBrains Mono — AUTOMATION·WIZARD · 09:00 AGENDADO · +248% ALCANCE</p>
+      <p class="spec-sub">Usada em maiúsculas com tracking largo para o lado "digital" e em métricas com tabular-nums</p>
+    </div>
+    <div class="type-block">
+      <div class="role-lbl">Escala tipográfica</div>
+      <div class="scale">
+        <span style="font-size:56px">64</span><span style="font-size:40px">40</span>
+        <span style="font-size:28px">28</span><span style="font-size:20px">20</span>
+        <span style="font-size:16px">16</span><span style="font-size:13px;color:var(--muted)">13</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <p class="mono">MERLIN · AUTOMATION WIZARD</p>
+    <p>Guia de marca v1 · gestão de mídias sociais · mago × robô</p>
+  </footer>
+</div>
+
+<script>
+  const s=document.getElementById('stars');
+  for(let i=0;i<46;i++){const e=document.createElement('i');
+    e.style.left=Math.random()*100+'%';e.style.top=Math.random()*100+'%';
+    e.style.animationDelay=(Math.random()*4)+'s';
+    e.style.transform='scale('+(0.5+Math.random())+')';s.appendChild(e);}
+
+  /* ---- Merl pixel sprite ---- */
+  (function(){
+    const cv=document.getElementById('merl'); if(!cv) return;
+    const ctx=cv.getContext('2d'); const W=56,H=70,cx=28;
+    const P={o:'#120826',hL:'#9a6bff',hD:'#5b3fa8',hS:'#3f2a72',g:'#ffcf4a',gD:'#d99a2c',
+      mL:'#dcd6f2',mM:'#a49ecb',mD:'#5f588f',mX:'#312a54',c:'#35e6ee',cD:'#1a8a9a',w:'#f4f0ff',sb:'#0a0518',gr:'#6ef0a0'};
+    const px=(x,y,c)=>{if(x<0||y<0||x>=W||y>=H)return;ctx.fillStyle=c;ctx.fillRect(x,y,1,1);};
+    const hl=(a,b,y,c)=>{for(let x=a;x<=b;x++)px(x,y,c);};
+    const rc=(a,t,b,d,c)=>{for(let y=t;y<=d;y++)for(let x=a;x<=b;x++)px(x,y,c);};
+
+    // hat cone (upper part leans right, small drooping fold at the tip — Merlin style)
+    const aY=7,bY=35;
+    const foldY=18, maxOff=7;
+    const coneOff=(y)=>{if(y>=foldY)return 0;const k=(foldY-y)/(foldY-aY);return Math.round(Math.pow(k,1.5)*maxOff);};
+    for(let y=aY;y<=bY;y++){const t=(y-aY)/(bY-aY);const hw=Math.round(1+t*12);const off=coneOff(y);const L=cx-hw+off,R=cx+hw+off;
+      for(let x=L;x<=R;x++){const rel=(x-L)/((R-L)||1);let c;
+        if(x===L||x===R)c=P.o;else if(rel<0.40)c=P.hL;else if(rel<0.72)c=P.hD;else c=P.hS;px(x,y,c);}}
+    // small folded tip drooping down-right from the apex
+    const ax=cx+maxOff, ay=aY;
+    px(ax+1,ay+1,P.hD);px(ax+2,ay+1,P.hD);px(ax+2,ay+2,P.hD);px(ax+1,ay+2,P.hL);
+    px(ax+3,ay+2,P.hD);px(ax+3,ay+3,P.hS);
+    px(ax+1,ay-1,P.o);px(ax+2,ay,P.o);px(ax+3,ay+1,P.o);px(ax+4,ay+2,P.o);px(ax+4,ay+3,P.o);
+    px(ax+3,ay+4,P.o);px(ax+2,ay+3,P.o);px(ax,ay+3,P.o);px(ax+1,ay+3,P.o);
+    // gold band
+    for(let y=27;y<=29;y++){const t=(y-aY)/(bY-aY);const hw=Math.round(1+t*12);
+      for(let x=cx-hw+1;x<=cx+hw-1;x++)px(x,y,y===29?P.gD:P.g);}
+    // brim
+    for(let y=35;y<=38;y++){const L=cx-15,R=cx+15;for(let x=L;x<=R;x++){let c=(y<=36)?P.hD:P.hS;
+      if(x===L||x===R||y===38)c=P.o;px(x,y,c);}}
+    // hat sparkles
+    px(cx-6,20,P.c);px(cx+5,16,P.w);px(cx+4,24,P.c);px(cx-7,25,P.w);
+    // head
+    const hlx=18,hrx=38,hty=37,hby=53;
+    for(let y=hty;y<=hby;y++)for(let x=hlx;x<=hrx;x++){
+      if((x<hlx+2&&y<hty+2)||(x>hrx-1&&y<hty+2)||(x<hlx+2&&y>hby-1)||(x>hrx-1&&y>hby-1))continue;
+      const rel=(x-hlx)/(hrx-hlx);let c;
+      if(x===hlx||x===hrx||y===hty||y===hby)c=P.o;else if(rel<0.5)c=P.mL;else c=P.mM;
+      if(y>hby-3&&c!==P.o)c=P.mD;px(x,y,c);}
+    // forehead gem
+    px(cx,38,P.g);hl(cx-1,cx+1,39,P.g);px(cx,39,P.w);px(cx,40,P.gD);
+    // visor
+    rc(20,42,36,46,P.sb);
+    // stern eyes
+    rc(22,44,26,45,P.c);rc(30,44,34,45,P.c);
+    px(22,43,P.cD);px(26,43,P.c);px(30,43,P.c);px(34,43,P.cD);
+    px(25,44,P.w);px(33,44,P.w);
+    px(27,43,P.o);px(28,43,P.o);px(29,43,P.o);
+    hl(20,36,46,P.cD);
+    // mouth grill
+    [24,27,30,33].forEach(x=>{px(x,49,P.mX);px(x,50,P.mX);});
+    hl(23,34,51,P.mD);
+    // ears
+    rc(16,44,17,49,P.mD);rc(39,44,40,49,P.mD);px(16,46,P.c);px(40,46,P.c);
+    px(16,43,P.o);px(17,43,P.o);px(39,43,P.o);px(40,43,P.o);
+    // neck
+    rc(25,54,31,56,P.mD);hl(25,31,55,P.cD);
+    // body
+    for(let y=57;y<=69;y++){const t=(y-57)/12;const L=Math.round(14+t*3),R=Math.round(42-t*3);
+      for(let x=L;x<=R;x++){const rel=(x-L)/((R-L)||1);let c;
+        if(x===L||x===R||y===69)c=P.o;else if(y===57)c=P.mL;else if(rel<0.5)c=P.mM;else c=P.mD;px(x,y,c);}}
+    hl(16,40,58,P.cD);
+    // chest terminal screen
+    rc(23,60,33,66,P.sb);
+    for(let x=23;x<=33;x++){px(x,60,P.cD);px(x,66,P.cD);}
+    for(let y=60;y<=66;y++){px(23,y,P.cD);px(33,y,P.cD);}
+    px(25,61,P.c);hl(27,31,61,P.gr);
+    hl(25,30,63,P.gr);
+    hl(25,28,64,P.gr);px(30,64,P.c);
+  })();
+</script>

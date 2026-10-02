@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Serviço restrito ao WhatsApp: nunca observa outros apps.
+     canPerformGestures=false: obrigatório pelo plano (R10).
+     Toda interação é por performAction no nó — sem coordenada de pixel.
+     flagRetrieveInteractiveWindows: necessário para ler janelas modais do WhatsApp. -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds|flagRetrieveInteractiveWindows"
+    android:canRetrieveWindowContent="true"
+    android:canPerformGestures="false"
+    android:packageNames="com.whatsapp"
+    android:notificationTimeout="100"
+    android:description="@string/accessibility_description_wa" />
