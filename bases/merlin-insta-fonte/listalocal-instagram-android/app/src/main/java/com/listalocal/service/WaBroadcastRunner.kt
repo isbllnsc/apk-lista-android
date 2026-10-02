@@ -48,6 +48,19 @@ class WaBroadcastRunner(
      * para que o usuário possa selecioná-las na Etapa 4 antes do envio.
      */
     suspend fun runPhase1() {
+        // Modo só-scan: pula criação de listas, vai direto ao escaneamento das existentes.
+        if (AutomationController.pendingBroadcastWa == AutomationController.ONLY_SCAN) {
+            AutomationController.setPhase(RunPhase.WORKING, "Abrindo WhatsApp para ler listas…")
+            tela.abrirInstagram()
+            tela.esperar(2_500)
+            AutomationController.setPhase(RunPhase.WORKING, "Lendo listas de transmissão do WhatsApp…")
+            val todasAsListas = scanAllBroadcastLists(emptyList())
+            AutomationController.update { st -> st.copy(broadcastListas = todasAsListas) }
+            Log.i(TAG, "Scan-only: ${todasAsListas.size} lista(s) encontrada(s)")
+            AutomationController.finish(RunPhase.LISTS_CREATED, "Listas atualizadas!")
+            return
+        }
+
         AutomationController.setPhase(RunPhase.READING_LIST, "Lendo agenda de contatos…")
         val contatos = carregarContatos()
         if (contatos.isEmpty()) {
@@ -142,6 +155,161 @@ class WaBroadcastRunner(
     }
 
     /**
+     * Escaneia a tela principal de conversas do WhatsApp procurando por listas de transmissão.
+     * As listas de transmissão aparecem como conversas cujo subtítulo contém
+     * "lista de transmissão" ou "broadcast list".
+     * Rola a lista para garantir que todas sejam encontradas.
+     */
+    private suspend fun scanBroadcastsFromMainChatList(
+        resultadosCriacao: List<BroadcastEngine.LoteResultado>
+    ): List<BroadcastListaProgress> {
+        // Abre o WhatsApp
+        tela.abrirInstagram()
+        tela.esperar(2_000)
+
+        // Garante que estamos na aba "Conversas" (e não Comunidades, Atualizações, etc.)
+        val rootAba = tela.ler()
+        if (rootAba != null) {
+            // Procura a aba "Conversas" na barra inferior — por texto, contentDescription ou ID
+            val abaConversas = rootAba.walk().firstOrNull { n ->
+                val txt = n.text?.toString() ?: ""
+                val cd = n.contentDescription?.toString() ?: ""
+                val id = n.viewIdResourceName?.substringAfter(":id/", "") ?: ""
+                txt.equals("Conversas", ignoreCase = true) ||
+                    txt.equals("Chats", ignoreCase = true) ||
+                    cd.equals("Conversas", ignoreCase = true) ||
+                    cd.equals("Chats", ignoreCase = true) ||
+                    id == "conversations_tab" || id == "chats_tab"
+            }
+            if (abaConversas != null) {
+                Log.d(TAG, "Clicando na aba Conversas: txt='${abaConversas.text}' cd='${abaConversas.contentDescription}'")
+                tela.tocar(abaConversas)
+                tela.esperar(1_500)
+            } else {
+                Log.w(TAG, "Aba Conversas não encontrada na barra inferior.")
+            }
+        }
+
+        data class ItemEscaneado(val titulo: String, val subtitulo: String)
+
+        val itens = mutableListOf<ItemEscaneado>()
+        val assinaturas = mutableSetOf<String>()
+        var rodadasSemNovos = 0
+
+        repeat(25) { _ ->
+            checkExpiry()
+            if (AutomationController.cancelRequested) return@repeat
+
+            val root = tela.ler() ?: return@repeat
+            val parentMap = construirMapaDePais(root)
+
+            // Log diagnóstico: registra todos os IDs visíveis na primeira rolagem
+            if (rodadasSemNovos == 0 && itens.isEmpty()) {
+                val idsVistos = root.walk()
+                    .mapNotNull { n -> n.viewIdResourceName?.substringAfter(":id/", "")?.takeIf { it.isNotBlank() } }
+                    .distinct()
+                    .take(30)
+                Log.d(TAG, "IDs na tela: $idsVistos")
+            }
+
+            // Padrões para identificar listas de transmissão
+            val broadcastTexts = listOf(
+                "lista de transmissão", "broadcast list",
+                "você criou uma lista", "you created a broadcast",
+            )
+
+            // Abordagem ampla: encontra contêineres de linha que contenham
+            // qualquer texto com padrão de broadcast EM QUALQUER NÓ FILHO
+            val todosNos = root.walk().toList()
+
+            // Mapeia cada nó para seu avô (2 níveis acima = linha da conversa)
+            var adicionou = false
+            val containersCandidatos = mutableSetOf<UiNode>()
+
+            for (no in todosNos) {
+                val txt = no.text?.toString() ?: ""
+                val cd = no.contentDescription?.toString() ?: ""
+                val textoCompleto = "$txt $cd"
+                val ehBroadcast = broadcastTexts.any { p ->
+                    textoCompleto.contains(p, ignoreCase = true)
+                }
+                if (ehBroadcast) {
+                    // Sobe até 4 níveis para encontrar o container da linha
+                    var container: UiNode? = no
+                    repeat(4) { container = parentMap[container] }
+                    container?.let { containersCandidatos.add(it) }
+                }
+            }
+
+            for (container in containersCandidatos) {
+                // Dentro do container, pega o primeiro texto que não seja broadcast
+                // (esse é o título da lista — nome dos contatos)
+                val textosNoContainer = container.walk()
+                    .mapNotNull { it.text?.toString()?.trim() }
+                    .filter { it.isNotBlank() }
+                    .toList()
+
+                val subtitulo = textosNoContainer.firstOrNull { t ->
+                    broadcastTexts.any { p -> t.contains(p, ignoreCase = true) }
+                } ?: ""
+
+                val titulo = textosNoContainer.firstOrNull { t ->
+                    broadcastTexts.none { p -> t.contains(p, ignoreCase = true) } && t.length > 2
+                } ?: ""
+
+                val chave = "${titulo.take(60)}||${subtitulo.take(80)}"
+                if (chave.length > 4 && assinaturas.add(chave)) {
+                    itens.add(ItemEscaneado(titulo.ifBlank { "Lista de transmissão" }, subtitulo))
+                    adicionou = true
+                    Log.i(TAG, "✅ Lista encontrada: titulo='$titulo' subtitulo='$subtitulo'")
+                }
+            }
+
+            if (adicionou) {
+                rodadasSemNovos = 0
+            } else {
+                rodadasSemNovos++
+                if (rodadasSemNovos >= 2) return@repeat
+            }
+
+            val rolevel = root.walk().firstOrNull { it.isScrollable }
+                ?: root.walk().firstOrNull { n ->
+                    val id = n.viewIdResourceName?.substringAfter(":id/", "") ?: ""
+                    id == "list" || id == "recycler_view" || id == "conversations_list" ||
+                        n.className?.contains("RecyclerView") == true
+                }
+            if (rolevel == null || !tela.rolar(rolevel)) return@repeat
+            tela.esperar(600)
+        }
+
+        Log.i(TAG, "scanBroadcastsFromMainChatList: ${itens.size} lista(s) encontrada(s)")
+
+        val lotesCriados = resultadosCriacao.filter { it.created }
+        return itens.mapIndexed { idx, item ->
+            val ehRecemCriada = idx < lotesCriados.size
+            val loteCorrespondente = if (ehRecemCriada) lotesCriados[idx] else null
+            val contatosCount = BroadcastParser.parseContactCount(item.subtitulo, item.titulo)
+                .takeIf { it > 0 }
+                ?: loteCorrespondente?.selected ?: 0
+            val label = when {
+                item.titulo.isNotBlank() -> item.titulo
+                loteCorrespondente != null -> loteCorrespondente.label
+                else -> "Lista #${idx + 1}"
+            }
+            BroadcastListaProgress(
+                index = idx + 1,
+                label = label,
+                selecionados = contatosCount,
+                total = contatosCount,
+                criada = true,
+                jaExistia = !ehRecemCriada,
+                subtitulo = item.subtitulo.ifBlank { if (contatosCount > 0) "$contatosCount destinatários" else "" },
+                selecionadaParaEnvio = true,
+            )
+        }
+    }
+
+    /**
      * Navega até a tela "Listas de transmissão" no WhatsApp.
      */
     private suspend fun navegarAteTelaListas(): Boolean {
@@ -204,19 +372,10 @@ class WaBroadcastRunner(
     ): List<BroadcastListaProgress> {
         val navOk = navegarAteTelaListas()
         if (!navOk) {
-            Log.w(TAG, "Não foi possível abrir tela de listas; usando listas criadas.")
-            return resultadosCriacao.filter { it.created }.map { r ->
-                BroadcastListaProgress(
-                    index = r.index,
-                    label = r.label,
-                    selecionados = r.selected,
-                    total = r.selected,
-                    criada = true,
-                    jaExistia = false,
-                    subtitulo = "${r.selected} contatos",
-                    selecionadaParaEnvio = true,
-                )
-            }
+            Log.w(TAG, "Tela de listas não disponível; escaneando tela principal de conversas.")
+            // Fallback: listas de transmissão aparecem na tela principal de conversas
+            // com subtítulo "Você criou uma lista de transmissão com X destinatários"
+            return scanBroadcastsFromMainChatList(resultadosCriacao)
         }
 
         data class ItemEscaneado(

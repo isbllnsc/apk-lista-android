@@ -232,8 +232,9 @@ class WhatsAppAccessibilityService : AccessibilityService() {
                             confirmarNoApp = { pergunta -> confirmarNoApp(pergunta) },
                             soPor5521 = AutomationController.soPor5521,
                         )
-                        if (mensagemBroadcast == AutomationController.ONLY_PHASE_1) {
-                            // Novo fluxo: só Fase 1, termina com LISTS_CREATED
+                        if (mensagemBroadcast == AutomationController.ONLY_PHASE_1 ||
+                            mensagemBroadcast == AutomationController.ONLY_SCAN) {
+                            // Fase 1 (com ou sem criação de listas), termina com LISTS_CREATED
                             runner.runPhase1()
                         } else {
                             // Fluxo antigo: Fase 1 + Fase 2 contínuas

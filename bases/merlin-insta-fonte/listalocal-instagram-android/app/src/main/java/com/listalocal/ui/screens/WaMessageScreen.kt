@@ -37,6 +37,7 @@ fun WaMessageScreen(
     mensagem: String,
     onMensagemChange: (String) -> Unit,
     onEnviar: () -> Unit,
+    onRelerListas: () -> Unit,
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -240,8 +241,8 @@ fun WaMessageScreen(
                                         )
                                         Text(
                                             text = when {
-                                                lista.selecionados > 0 -> "${lista.selecionados} contatos"
                                                 lista.subtitulo.isNotBlank() -> lista.subtitulo
+                                                lista.selecionados > 0 -> "${lista.selecionados} destinatários"
                                                 else -> "Lista de transmissão"
                                             },
                                             style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
@@ -311,6 +312,18 @@ fun WaMessageScreen(
             )
         }
 
+        OutlinedButton(
+            onClick = onRelerListas,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(48.dp),
+        ) {
+            Text(
+                text = "🗘 Atualizar listas do WhatsApp",
+                fontSize = 15.sp,
+            )
+        }
+
         TextButton(
             onClick = onBack,
             modifier = Modifier.align(Alignment.CenterHorizontally),
@@ -357,6 +370,7 @@ fun WaMessageScreen(
         mensagem = mensagem,
         onMensagemChange = onMensagemChange,
         onEnviar = onEnviar,
+        onRelerListas = {},
         onBack = onBack,
         modifier = modifier,
     )

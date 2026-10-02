@@ -285,6 +285,7 @@ private fun AppRoot(vm: MainViewModel = viewModel()) {
                             vm.iniciarBroadcastWa()
                         }
                     },
+                    onRelerListas = vm::relerListasWa,
                     onBack = { vm.goTo(Step.PERMISSIONS) },
                     contatosOk = contatosOk,
                     onPedirContatos = { pedirContatos.launch(Manifest.permission.READ_CONTACTS) },
@@ -293,7 +294,8 @@ private fun AppRoot(vm: MainViewModel = viewModel()) {
                 )
 
                 Step.WA_MESSAGE -> {
-                    val todasListas = run.broadcastListas.filter { it.criada }
+                    // Mostra todas as listas: as criadas agora E as já existentes (detectadas via scan)
+                    val todasListas = run.broadcastListas
                     val selecionadas = if (ui.listasSelecionadasWa.isNotEmpty()) {
                         ui.listasSelecionadasWa
                     } else {
@@ -309,6 +311,7 @@ private fun AppRoot(vm: MainViewModel = viewModel()) {
                         mensagem = ui.mensagemWa,
                         onMensagemChange = vm::setMensagemWa,
                         onEnviar = vm::enviarMensagemWa,
+                        onRelerListas = vm::relerListasWa,
                         onBack = { vm.goTo(Step.WA_BROADCAST) },
                     )
                 }

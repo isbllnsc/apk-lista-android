@@ -398,6 +398,16 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         _ui.value = _ui.value.copy(soPor5521 = v)
     }
 
+    /**
+     * Abre o WhatsApp e relê todas as listas de transmissão existentes — sem criar novas.
+     * Útil para descobrir listas criadas manualmente pelo usuário após a Etapa 3.
+     */
+    fun relerListasWa() {
+        if (!active()) return
+        AutomationController.startScanOnlyWa()
+        _ui.value = _ui.value.copy(step = Step.RUN)
+    }
+
     /** Alterna a seleção de uma lista de transmissão na Etapa 4. */
     fun toggleListaWa(index: Int) {
         val current = _ui.value.listasSelecionadasWa
@@ -427,7 +437,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         val selecionadas = if (s.listasSelecionadasWa.isNotEmpty()) {
             s.listasSelecionadasWa
         } else {
-            runState.value.broadcastListas.filter { it.criada }.map { it.index }.toSet()
+            runState.value.broadcastListas.map { it.index }.toSet()
         }
         if (selecionadas.isEmpty()) return
         AutomationController.startSendViaListsWa(mensagem, selecionadas)

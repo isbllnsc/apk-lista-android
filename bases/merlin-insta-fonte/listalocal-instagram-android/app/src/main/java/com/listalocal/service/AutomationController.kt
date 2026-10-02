@@ -243,6 +243,29 @@ object AutomationController {
     }
 
     /**
+     * Apenas escaneia as listas de transmissão existentes no WhatsApp — sem criar novas.
+     * Útil para atualizar a lista na Etapa 4 quando o usuário criou listas manualmente.
+     */
+    fun startScanOnlyWa() {
+        cancelRequested = false
+        pauseRequested = false
+        pendingBroadcastWa = ONLY_SCAN   // sinaliza: só escanear
+        pendingBroadcastPhase2 = null
+        pendingBroadcastPhase2Listas = null
+        // Preserva as listas e os parâmetros de compatibilidade; apenas reinicia a fase
+        _state.value = _state.value.copy(
+            phase = RunPhase.PREPARING,
+            modo = Modo.LISTAS_TRANSMISSAO,
+            origem = null,
+            running = true,
+            isWa = true,
+            broadcastFase = 1,
+            message = "Lendo listas do WhatsApp…",
+            // broadcastListas é preservado para o usuário continuar vendo as listas enquanto o scan ocorre
+        )
+    }
+
+    /**
      * Inicia a Fase 2 (envia mensagem pelas listas selecionadas ou todas as criadas).
      * Requer que a Fase 1 já tenha sido executada ([RunPhase.LISTS_CREATED] no estado).
      *
@@ -263,6 +286,9 @@ object AutomationController {
 
     /** Sentinel: indica que só a Fase 1 deve ser executada (sem envio de mensagem). */
     const val ONLY_PHASE_1 = "__only_phase_1__"
+
+    /** Sentinel: indica que só o escaneamento deve ser executado (sem criar listas nem enviar). */
+    const val ONLY_SCAN = "__only_scan__"
 
     /** UI confirma (ou nega) seguir para o proximo lote / tocar em Concluir. */
     fun confirm(ok: Boolean) {

@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun WaBroadcastScreen(
     onIniciar: () -> Unit,
+    onRelerListas: () -> Unit = {},
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
     contatosOk: Boolean = true,
@@ -148,6 +149,18 @@ fun WaBroadcastScreen(
                 text = if (!contatosOk) "Permitir contatos e criar listas" else "Criar listas",
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
+            )
+        }
+
+        OutlinedButton(
+            onClick = onRelerListas,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(48.dp),
+        ) {
+            Text(
+                text = "🗘 Já tenho listas — ir para Etapa 4",
+                fontSize = 15.sp,
             )
         }
 
