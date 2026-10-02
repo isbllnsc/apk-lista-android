@@ -147,9 +147,10 @@ class BroadcastEngine(
      * @return true se o contato foi selecionado com evidência de marcação.
      */
     private suspend fun selectOne(contato: Contato): Boolean {
-        val candidatos = consultasPara(contato.e164, contato.nome)
+        val candidatos = consultasPara(contato.e164)
         var rows: List<AccessibilityNodeInfo> = emptyList()
 
+        var ultimaConsultaUsada = ""
         for ((i, consulta) in candidatos.withIndex()) {
             checkExpiry()
             if (ultimoResultadoVazio || consulta.equals(ultimaConsulta, ignoreCase = true)) {
@@ -160,7 +161,9 @@ class BroadcastEngine(
                 Log.w(TAG, "não consegui digitar busca para ${Redaction.mask(contato.nome)}")
                 return false
             }
-            rows = waitExactNameRows(contato.nome, BUSCA_TIMEOUT_MS, antes)
+            // waitExactNameRows compara pelo texto na tela — que é o número digitado, não o nome da agenda
+            rows = waitExactNameRows(consulta, BUSCA_TIMEOUT_MS, antes)
+            ultimaConsultaUsada = consulta
             ultimaConsulta = consulta
             ultimoResultadoVazio = rows.isEmpty()
             if (rows.isNotEmpty()) break
@@ -168,15 +171,23 @@ class BroadcastEngine(
         }
 
         return when {
-            rows.size == 1 -> {
+            rows.isNotEmpty() -> {
                 if (ops.anySelected(rows)) {
                     Log.d(TAG, "${Redaction.mask(contato.nome)}: já selecionado")
                     true
                 } else {
                     val chipsAntes = contarChips()
-                    ops.click(rows[0])
-                    val oraculo = esperarMarcacao(contato.nome, chipsAntes)
-                    if (oraculo != null) {
+                    var clicou = false
+                    var oraculo: String? = null
+                    for (node in rows) {
+                        ops.click(node)
+                        oraculo = esperarMarcacao(ultimaConsultaUsada, chipsAntes)
+                        if (oraculo != null) {
+                            clicou = true
+                            break
+                        }
+                    }
+                    if (clicou) {
                         Log.d(TAG, "${Redaction.mask(contato.nome)}: selecionado ($oraculo)")
                         true
                     } else {
@@ -189,43 +200,99 @@ class BroadcastEngine(
                     }
                 }
             }
-            rows.size > 1 -> { Log.d(TAG, "${Redaction.mask(contato.nome)}: ambíguo (${rows.size} resultados)"); false }
             else -> { Log.d(TAG, "${Redaction.mask(contato.nome)}: não encontrado"); false }
         }
     }
 
-    /** Consultas a tentar no seletor — nome primeiro, depois número. */
-    private fun consultasPara(e164: String, nome: String): List<String> {
-        val n = nome.trim()
-        val nomeEhNumero = n.isEmpty() || NUMERICO.matches(n)
-        if (!nomeEhNumero) return listOf(n)
-        val nacional = if (e164.startsWith("+55")) e164.removePrefix("+55") else e164.removePrefix("+")
-        return listOf(nacional, e164).distinct()
+    /**
+     * Retorna a consulta a digitar na busca do WhatsApp.
+     * Usa apenas o formato nacional (sem o +55) pois o WhatsApp acha pelo número local.
+     * Uma única busca é suficiente — buscar duas vezes pelo mesmo contato não ajuda.
+     */
+    private fun consultasPara(e164: String): List<String> {
+        // Remove o +55 para busca nacional: 5521968455680 → 21968455680 (apenas DDD + número)
+        val semPrefixo = when {
+            e164.startsWith("+55") -> e164.removePrefix("+55")
+            e164.startsWith("+") -> e164.removePrefix("+")
+            else -> e164
+        }
+        return listOf(semPrefixo)
     }
 
-    private fun contarChips(): Int =
-        ops.byViewId(prof.idFor("selected_chip_name") ?: "contact_name").size
-
-    private fun fotografarLinhas(): Set<String> {
-        val rowId = prof.idFor("row_name") ?: "chat_able_contacts_row_name"
-        return ops.byViewId(rowId).mapNotNull { it.text?.toString()?.trim() }.toSet()
+    /**
+     * IDs possíveis para o row de contato no picker do WhatsApp.
+     * Tentamos os dois para cobrir versões antigas e novas.
+     */
+    private fun byRowId(): List<AccessibilityNodeInfo> {
+        val ids = listOfNotNull(
+            prof.idFor("row_name"),
+            "chat_able_contacts_row_name",
+            "contactpicker_row_name",
+        ).distinct()
+        for (id in ids) {
+            val found = ops.byViewId(id)
+            if (found.isNotEmpty()) return found
+        }
+        return emptyList()
     }
+
+    private fun contarChips(): Int {
+        val ids = listOfNotNull(
+            prof.idFor("selected_chip_name"),
+            "contact_name",
+            "selected_contact_chip",
+            "chip",
+        ).distinct()
+        for (id in ids) {
+            val count = ops.byViewId(id).size
+            if (count > 0) return count
+        }
+        return 0
+    }
+
+    private fun fotografarLinhas(): Set<String> =
+        byRowId().mapNotNull { it.text?.toString()?.trim() }.toSet()
 
     private suspend fun esperarMarcacao(nome: String, chipsAntes: Int): String? {
-        val rowId = prof.idFor("row_name") ?: "chat_able_contacts_row_name"
         val checkId = prof.idFor("selection_check") ?: "selection_check"
         val alvo = nome.trim()
+        val buscaNumerica = NUMERICO.matches(alvo)
         val fim = SystemClock.uptimeMillis() + MARCACAO_TIMEOUT_MS
         while (SystemClock.uptimeMillis() < fim) {
             checkExpiry()
+            // Primeiro sinal de sucesso: chips aumentaram
             if (contarChips() > chipsAntes) return "chip"
-            val linha = ops.byViewId(rowId).firstOrNull { it.text?.toString()?.trim() == alvo }
+
+            // Para busca numérica: qualquer row visible = pode ser o contato selecionado;
+            // verificamos o estado do container (isChecked/isSelected) ou checkbox filho.
+            val linhas = byRowId()
+            val linha = if (buscaNumerica) {
+                linhas.firstOrNull()
+            } else {
+                linhas.firstOrNull {
+                    val txt = it.text?.toString()?.trim() ?: ""
+                    txt == alvo
+                }
+            }
             if (linha != null) {
                 val c = containerDe(linha)
                 if (c != null && (c.isChecked || c.isSelected)) return "container"
                 if (c?.contentDescription?.contains("elecionad", ignoreCase = true) == true) return "descricao"
-                val check = ops.descendantByViewId(c ?: linha, checkId)
-                if (check != null && check.isVisibleToUser) return "check"
+
+                var ancestor = c ?: linha
+                var check: AccessibilityNodeInfo? = null
+                var hops = 0
+                while (ancestor != null && hops < 5) {
+                    check = ops.descendantByViewId(ancestor, checkId)
+                    if (check != null) break
+                    ancestor = ancestor.parent
+                    hops++
+                }
+                if (check != null && (check.isChecked || check.isSelected)) return "check"
+            } else if (buscaNumerica && linhas.isEmpty()) {
+                // Para busca numérica: se não há mais nenhum row é porque o contato foi marcado
+                // e a lista voltou ao estado inicial (sem busca ativa). Verificamos chips novamente.
+                if (contarChips() > chipsAntes) return "chip-apos-limpar"
             }
             delay(POLL_NORMAL)
         }
@@ -258,13 +325,12 @@ class BroadcastEngine(
         val atual = box.text?.toString() ?: ""
         if (atual.isEmpty()) return
         if (!ops.setText(box, "")) { searchBox = null; return }
-        val rowId = prof.idFor("row_name") ?: "chat_able_contacts_row_name"
         val semResultadosId = prof.idFor("no_results")
         var anterior: Set<String>? = null
         val fim = SystemClock.uptimeMillis() + PREPARO_TIMEOUT_MS
         while (SystemClock.uptimeMillis() < fim) {
             checkExpiry()
-            val nomes = ops.byViewId(rowId).mapNotNull { it.text?.toString()?.trim() }.toSet()
+            val nomes = byRowId().mapNotNull { it.text?.toString()?.trim() }.toSet()
             val semAviso = semResultadosId == null || !ops.existsViewId(semResultadosId)
             if (nomes.isNotEmpty() && semAviso && nomes == anterior) return
             anterior = if (nomes.isNotEmpty() && semAviso) nomes else null
@@ -420,10 +486,11 @@ class BroadcastEngine(
         timeoutMs: Long,
         antes: Set<String> = emptySet(),
     ): List<AccessibilityNodeInfo> {
-        // Fallback WA 2.26+: contactpicker_row_name
-        val rowId = prof.idFor("row_name") ?: "contactpicker_row_name"
+        // Se a busca foi numérica, o WhatsApp exibe o NOME do contato, não o número.
+        // Nesse caso, qualquer resultado que aparecer após a digitação é o contato certo.
         val semResultadosId = prof.idFor("no_results")
         val alvo = name.trim()
+        val buscaNumerica = NUMERICO.matches(alvo)
         var anterior: Set<String>? = null
         var estaveis = 0
         var avisos = 0
@@ -435,12 +502,24 @@ class BroadcastEngine(
             checkExpiry()
             decorrido = SystemClock.uptimeMillis() - inicio
             if (ops.root() == null) { delay(poll); poll = POLL_NORMAL; continue }
-            val todas = ops.byViewId(rowId)
+            val todas = byRowId()
             val nomes = todas.mapNotNull { it.text?.toString()?.trim() }.toSet()
             val mudou = (todas.isEmpty() && antes.isNotEmpty()) || (nomes.isNotEmpty() && nomes != antes)
             if (!mudou) { delay(poll); poll = POLL_NORMAL; continue }
-            val exatas = todas.filter { it.text?.toString()?.trim() == alvo }
-            if (exatas.isNotEmpty()) return exatas
+            if (buscaNumerica) {
+                // Para busca numérica: qualquer row que aparecer após digitar é o contato certo
+                if (todas.isNotEmpty()) {
+                    val avisou = semResultadosId != null && ops.existsViewId(semResultadosId)
+                    if (!avisou) return todas
+                }
+            } else {
+                // Para busca por nome: exige correspondência exata de texto
+                val exatas = todas.filter { 
+                    val txt = it.text?.toString()?.trim() ?: ""
+                    txt == alvo
+                }
+                if (exatas.isNotEmpty()) return exatas
+            }
             if (todas.isEmpty()) {
                 val avisou = semResultadosId != null && ops.existsViewId(semResultadosId)
                 avisos = if (avisou) avisos + 1 else 0
@@ -478,7 +557,7 @@ class BroadcastEngine(
         private const val PREPARO_TIMEOUT_MS = 2500L
         private const val CICLOS_ESTAVEIS = 3
         private const val PISO_VEREDITO_MS = 400L
-        private const val MARCACAO_TIMEOUT_MS = 800L
+        private const val MARCACAO_TIMEOUT_MS = 2500L
         private const val CICLOS_VAZIO_ESTAVEL = 6
         private const val PISO_VAZIO_MS = 1200L
         private val NUMERICO = Regex("^[+\\d\\s()\\-]+$")

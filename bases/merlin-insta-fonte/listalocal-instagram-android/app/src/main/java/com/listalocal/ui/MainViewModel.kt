@@ -91,6 +91,8 @@ data class UiState(
     val mensagemWa: String = "",
     /** Índices das listas de transmissão selecionadas pelo usuário para envio na Etapa 4. */
     val listasSelecionadasWa: Set<Int> = emptySet(),
+    /** Quando true, filtra apenas contatos com DDD 21 (+5521) na Fase 1. */
+    val soPor5521: Boolean = false,
 ) {
     val instagramInstalado: Boolean get() = versaoInstagram != null
     val baseLegalFinal: String get() = if (baseLegal == OUTRA) baseLegalOutro.trim() else baseLegal
@@ -386,8 +388,14 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             pararAs = null,
         )
         Campanhas(getApplication()).salvar(c)
+        AutomationController.soPor5521 = s.soPor5521
         AutomationController.startCreateListsWa(c)
         _ui.value = s.copy(step = Step.RUN, salva = null, salvaFeitos = emptyList(), listasSelecionadasWa = emptySet())
+    }
+
+    /** Alterna o filtro de DDD 21 (+5521) na tela de criar listas. */
+    fun toggleSoPor5521(v: Boolean) {
+        _ui.value = _ui.value.copy(soPor5521 = v)
     }
 
     /** Alterna a seleção de uma lista de transmissão na Etapa 4. */

@@ -288,6 +288,8 @@ private fun AppRoot(vm: MainViewModel = viewModel()) {
                     onBack = { vm.goTo(Step.PERMISSIONS) },
                     contatosOk = contatosOk,
                     onPedirContatos = { pedirContatos.launch(Manifest.permission.READ_CONTACTS) },
+                    soPor5521 = ui.soPor5521,
+                    onSoPor5521Change = vm::toggleSoPor5521,
                 )
 
                 Step.WA_MESSAGE -> {

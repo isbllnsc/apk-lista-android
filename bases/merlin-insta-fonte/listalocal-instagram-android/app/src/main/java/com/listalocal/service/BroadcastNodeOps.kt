@@ -111,7 +111,10 @@ class WaBroadcastNodeOps(
             n = n.parent
             hops++
         }
-        return false
+        // Fallback: força o clique direto no node original, mesmo sem isClickable = true.
+        // O APK de referência (v16) faz isso quando nenhum parent clicável é achado.
+        if (!onTargetApp()) return false
+        return node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
     }
 
     override fun setText(node: AccessibilityNodeInfo?, text: String): Boolean {

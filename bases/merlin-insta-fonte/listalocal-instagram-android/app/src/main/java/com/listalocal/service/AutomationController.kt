@@ -64,6 +64,8 @@ object AutomationController {
     @Volatile internal var pendingBroadcastPhase2: String? = null
     /** Índices das listas de transmissão selecionadas pelo usuário para envio na Fase 2. */
     @Volatile internal var pendingBroadcastPhase2Listas: Set<Int>? = null
+    /** Quando true, filtra contatos com DDD 21 (+5521) na Fase 1. */
+    @Volatile var soPor5521: Boolean = false
 
     fun attachWa(available: Boolean) { serviceAvailableWa = available }
     val isWaServiceAvailable: Boolean get() = serviceAvailableWa

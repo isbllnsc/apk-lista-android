@@ -25,6 +25,8 @@ fun WaBroadcastScreen(
     modifier: Modifier = Modifier,
     contatosOk: Boolean = true,
     onPedirContatos: () -> Unit = {},
+    soPor5521: Boolean = false,
+    onSoPor5521Change: (Boolean) -> Unit = {},
 ) {
     Column(
         modifier = modifier
@@ -64,8 +66,54 @@ fun WaBroadcastScreen(
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                 )
                 StepRowWa(numero = "1", texto = "O WhatsApp abre automaticamente.")
-                StepRowWa(numero = "2", texto = "Listas de transmissão são criadas com todos os contatos da agenda (até 256 por lista).")
+                StepRowWa(numero = "2", texto = "Listas de transmissão são criadas com os contatos da agenda (até 256 por lista).")
                 StepRowWa(numero = "3", texto = "Ao terminar, o app volta para você digitar a mensagem e confirmar o envio.")
+            }
+        }
+
+        // ── Filtro por DDD 21 ──────────────────────────────────────────────────
+
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.cardColors(
+                containerColor = if (soPor5521)
+                    MaterialTheme.colorScheme.secondaryContainer
+                else
+                    MaterialTheme.colorScheme.surfaceVariant,
+            ),
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 12.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                Switch(
+                    checked = soPor5521,
+                    onCheckedChange = onSoPor5521Change,
+                )
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = "Filtrar por DDD 21 (Rio de Janeiro)",
+                        style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.SemiBold),
+                        color = if (soPor5521)
+                            MaterialTheme.colorScheme.onSecondaryContainer
+                        else
+                            MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                    Text(
+                        text = if (soPor5521)
+                            "Somente contatos com número iniciando em +55 21 serão incluídos nas listas."
+                        else
+                            "Todos os contatos da agenda serão incluídos nas listas.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = if (soPor5521)
+                            MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.8f)
+                        else
+                            MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+                    )
+                }
             }
         }
 

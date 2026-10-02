@@ -33,6 +33,8 @@ class WaBroadcastRunner(
     private val prof: SelectorProfile,
     private val checkExpiry: () -> Unit,
     private val confirmarNoApp: suspend (String) -> Boolean,
+    /** Quando true, inclui apenas contatos com número iniciando em +5521 (DDD 21). */
+    val soPor5521: Boolean = false,
 ) {
 
     // ── Fase 1: criar e escanear listas ───────────────────────────────────────
@@ -547,6 +549,7 @@ class WaBroadcastRunner(
         val contatos = mutableListOf<Contato>()
         for (entry in raw) {
             val e164 = entry.phones.firstNotNullOfOrNull { normalizar(it) } ?: continue
+            if (soPor5521 && !e164.startsWith("+5521")) continue   // filtro DDD 21
             contatos += Contato(e164 = e164, nome = entry.name, contactId = entry.id)
         }
         return contatos

@@ -230,6 +230,7 @@ class WhatsAppAccessibilityService : AccessibilityService() {
                             prof = prof,
                             checkExpiry = { checkExpiry() },
                             confirmarNoApp = { pergunta -> confirmarNoApp(pergunta) },
+                            soPor5521 = AutomationController.soPor5521,
                         )
                         if (mensagemBroadcast == AutomationController.ONLY_PHASE_1) {
                             // Novo fluxo: só Fase 1, termina com LISTS_CREATED
@@ -274,6 +275,7 @@ class WhatsAppAccessibilityService : AccessibilityService() {
                             prof = prof,
                             checkExpiry = { checkExpiry() },
                             confirmarNoApp = { pergunta -> confirmarNoApp(pergunta) },
+                            soPor5521 = AutomationController.soPor5521,
                         )
                         runner.runPhase2(mensagemFase2, listasFase2)
                     }
